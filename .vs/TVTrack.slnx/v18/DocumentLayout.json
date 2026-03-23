@@ -1,0 +1,496 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "J:\\CSharp\\TVTrack\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\tvshow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\tvshow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\follows.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\follows.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\usercardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\usercardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\followlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\followlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\mylistsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\mylistsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\showcardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\showcardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\listviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\listviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\reviewitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\reviewitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\showviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\showviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\searchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\searchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\showrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\showrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\listrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\listrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\watchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\watchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\tvshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\tvshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\follow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\follow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\customlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\customlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TVShow.cshtml",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\TVShow.cshtml",
+              "RelativeDocumentMoniker": "TVTrack\\Views\\TVShow.cshtml",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\TVShow.cshtml",
+              "RelativeToolTip": "TVTrack\\Views\\TVShow.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-23T16:03:02.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Follows.cshtml",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Follows.cshtml",
+              "RelativeDocumentMoniker": "TVTrack\\Views\\Follows.cshtml",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Follows.cshtml",
+              "RelativeToolTip": "TVTrack\\Views\\Follows.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-23T16:02:35.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Search.cshtml",
+              "RelativeDocumentMoniker": "TVTrack\\Views\\Search.cshtml",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Search.cshtml",
+              "RelativeToolTip": "TVTrack\\Views\\Search.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-23T16:01:59.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Profile.cshtml",
+              "RelativeDocumentMoniker": "TVTrack\\Views\\Profile.cshtml",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Profile.cshtml",
+              "RelativeToolTip": "TVTrack\\Views\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-23T16:01:48.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Register.cshtml",
+              "RelativeDocumentMoniker": "TVTrack\\Views\\Register.cshtml",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Register.cshtml",
+              "RelativeToolTip": "TVTrack\\Views\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-23T16:01:17.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Login.cshtml",
+              "RelativeDocumentMoniker": "TVTrack\\Views\\Login.cshtml",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Login.cshtml",
+              "RelativeToolTip": "TVTrack\\Views\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-23T16:01:02.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserCardViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\UserCardViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\UserCardViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\UserCardViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\UserCardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T16:00:21.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FollowListViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\FollowListViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\FollowListViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\FollowListViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\FollowListViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T16:00:02.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MyListsViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\MyListsViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\MyListsViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\MyListsViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\MyListsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:59:53.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ShowCardViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ShowCardViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ShowCardViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ShowCardViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ShowCardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:59:44.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ListViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ListViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ListViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ListViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ListViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:59:34.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:59:25.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:59:12.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProfileViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ProfileViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ProfileViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ProfileViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ProfileViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:58:58.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReviewItemViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ReviewItemViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ReviewItemViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ReviewItemViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ReviewItemViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:58:51.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ShowViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ShowViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ShowViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ShowViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ShowViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:58:44.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SearchViewModel.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\SearchViewModel.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\SearchViewModel.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\SearchViewModel.cs",
+              "RelativeToolTip": "TVTrack\\Models\\ViewModels\\SearchViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:58:38.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ShowRepository.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ShowRepository.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\Repos\\ShowRepository.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ShowRepository.cs",
+              "RelativeToolTip": "TVTrack\\Models\\Repos\\ShowRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:57:10.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ReviewRepository.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ReviewRepository.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\Repos\\ReviewRepository.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ReviewRepository.cs",
+              "RelativeToolTip": "TVTrack\\Models\\Repos\\ReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:56:58.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ListRepository.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ListRepository.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\Repos\\ListRepository.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ListRepository.cs",
+              "RelativeToolTip": "TVTrack\\Models\\Repos\\ListRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:56:52.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\UserRepository.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\Repos\\UserRepository.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\UserRepository.cs",
+              "RelativeToolTip": "TVTrack\\Models\\Repos\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:56:46.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "WatchList.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\WatchList.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\WatchList.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\WatchList.cs",
+              "RelativeToolTip": "TVTrack\\Models\\WatchList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:56:02.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TVShow.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\TVShow.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\TVShow.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\TVShow.cs",
+              "RelativeToolTip": "TVTrack\\Models\\TVShow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:55:55.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Review.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\Review.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Review.cs",
+              "RelativeToolTip": "TVTrack\\Models\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:55:42.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Rating.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Rating.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\Rating.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Rating.cs",
+              "RelativeToolTip": "TVTrack\\Models\\Rating.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:55:36.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Follow.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Follow.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\Follow.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Follow.cs",
+              "RelativeToolTip": "TVTrack\\Models\\Follow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:55:23.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CustomList.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\CustomList.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\CustomList.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\CustomList.cs",
+              "RelativeToolTip": "TVTrack\\Models\\CustomList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:55:17.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "User.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\User.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Models\\User.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\User.cs",
+              "RelativeToolTip": "TVTrack\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:55:09.224Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
