@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TVTrack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e0e6667220fee445783af3e4687a27d4327669b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TVTrack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TVTrack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

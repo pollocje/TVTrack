@@ -3,116 +3,128 @@
   "WorkspaceRootPath": "J:\\CSharp\\TVTrack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\tvshow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\tvshow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\follows.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\follows.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\tvshow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\tvshow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\follows.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\follows.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\usercardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\usercardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\followlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\followlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\mylistsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\mylistsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\views\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\views\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\showcardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\showcardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\usercardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\usercardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\listviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\listviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\followlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\followlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\mylistsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\mylistsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\showcardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\showcardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\listviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\listviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\reviewitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\reviewitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\showviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\showviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\searchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\searchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\showrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\showrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\reviewitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\reviewitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\showviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\showviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\listrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\listrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\viewmodels\\searchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\viewmodels\\searchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\showrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\showrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\watchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\watchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\tvshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\tvshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\listrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\listrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\watchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\watchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\follow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\follow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\tvshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\tvshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\customlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\customlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDD3573-5247-4A4D-B1F6-69A21DD5F31C}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\follow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\follow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\customlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\customlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|j:\\csharp\\tvtrack\\tvtrack\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5800F268-11F2-3FC7-AC84-C972F860C232}|TVTrack\\TVTrack.csproj|solutionrelative:tvtrack\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -127,6 +139,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Data\\AppDbContext.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "TVTrack\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T20:49:50.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Program.cs",
+              "RelativeDocumentMoniker": "TVTrack\\Program.cs",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\Program.cs",
+              "RelativeToolTip": "TVTrack\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T20:46:33.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\appsettings.json",
+              "RelativeDocumentMoniker": "TVTrack\\appsettings.json",
+              "ToolTip": "J:\\CSharp\\TVTrack\\TVTrack\\appsettings.json",
+              "RelativeToolTip": "TVTrack\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-27T20:42:57.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "TVShow.cshtml",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\TVShow.cshtml",
               "RelativeDocumentMoniker": "TVTrack\\Views\\TVShow.cshtml",
@@ -139,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Follows.cshtml",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Follows.cshtml",
               "RelativeDocumentMoniker": "TVTrack\\Views\\Follows.cshtml",
@@ -152,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Search.cshtml",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Search.cshtml",
               "RelativeDocumentMoniker": "TVTrack\\Views\\Search.cshtml",
@@ -165,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Profile.cshtml",
               "RelativeDocumentMoniker": "TVTrack\\Views\\Profile.cshtml",
@@ -178,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Register.cshtml",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Register.cshtml",
               "RelativeDocumentMoniker": "TVTrack\\Views\\Register.cshtml",
@@ -191,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Login.cshtml",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Views\\Login.cshtml",
               "RelativeDocumentMoniker": "TVTrack\\Views\\Login.cshtml",
@@ -204,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "UserCardViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\UserCardViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\UserCardViewModel.cs",
@@ -217,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "FollowListViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\FollowListViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\FollowListViewModel.cs",
@@ -230,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "MyListsViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\MyListsViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\MyListsViewModel.cs",
@@ -243,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "ShowCardViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ShowCardViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ShowCardViewModel.cs",
@@ -256,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "ListViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ListViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ListViewModel.cs",
@@ -269,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\RegisterViewModel.cs",
@@ -282,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\LoginViewModel.cs",
@@ -295,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "ProfileViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ProfileViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ProfileViewModel.cs",
@@ -308,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "ReviewItemViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ReviewItemViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ReviewItemViewModel.cs",
@@ -321,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "ShowViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\ShowViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\ShowViewModel.cs",
@@ -334,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "SearchViewModel.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\ViewModels\\SearchViewModel.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\ViewModels\\SearchViewModel.cs",
@@ -347,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ShowRepository.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ShowRepository.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\Repos\\ShowRepository.cs",
@@ -360,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "ReviewRepository.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ReviewRepository.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\Repos\\ReviewRepository.cs",
@@ -373,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "ListRepository.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\ListRepository.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\Repos\\ListRepository.cs",
@@ -386,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Repos\\UserRepository.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\Repos\\UserRepository.cs",
@@ -399,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "WatchList.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\WatchList.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\WatchList.cs",
@@ -412,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "TVShow.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\TVShow.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\TVShow.cs",
@@ -425,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Review.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Review.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\Review.cs",
@@ -438,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "Rating.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Rating.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\Rating.cs",
@@ -451,7 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "Follow.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\Follow.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\Follow.cs",
@@ -464,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "CustomList.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\CustomList.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\CustomList.cs",
@@ -477,7 +528,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "User.cs",
               "DocumentMoniker": "J:\\CSharp\\TVTrack\\TVTrack\\Models\\User.cs",
               "RelativeDocumentMoniker": "TVTrack\\Models\\User.cs",
