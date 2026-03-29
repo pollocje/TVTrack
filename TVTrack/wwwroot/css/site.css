@@ -390,6 +390,59 @@ body {
   color: #fff;
 }
 
+/* ── Add to List button ────────────────────────────── */
+.btn-list-add {
+  background-color: transparent;
+  border: 1px solid var(--tv-muted);
+  color: var(--tv-muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  cursor: pointer;
+}
+
+.btn-list-add:hover {
+  border-color: var(--tv-accent);
+  color: var(--tv-accent);
+}
+
+/* ── Modal dark theme ──────────────────────────────── */
+.modal-dark {
+  background-color: var(--tv-surface);
+  color: var(--tv-text);
+  border: 1px solid var(--tv-border);
+}
+
+.modal-dark .modal-header {
+  border-bottom: 1px solid var(--tv-border);
+}
+
+.modal-dark .modal-title {
+  color: var(--tv-text);
+}
+
+.form-select-dark,
+.form-control-dark {
+  background-color: var(--tv-bg);
+  border: 1px solid var(--tv-border);
+  color: var(--tv-text);
+  border-radius: 6px;
+}
+
+.form-select-dark:focus,
+.form-control-dark:focus {
+  background-color: var(--tv-bg);
+  border-color: var(--tv-accent);
+  color: var(--tv-text);
+  box-shadow: 0 0 0 2px rgba(100, 160, 255, 0.25);
+}
+
+.divider-dark {
+  border-color: var(--tv-border);
+}
+
 /* ── Review form ───────────────────────────────────── */
 .review-textarea {
   background-color: var(--tv-surface-2);
@@ -488,4 +541,78 @@ body {
 /* ── Focus ring override ───────────────────────────── */
 .btn:focus, .btn:active:focus, .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(74, 158, 255, 0.3);
+}
+
+/* ── Profile page ──────────────────────────────────── */
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--tv-border);
+  flex-shrink: 0;
+}
+
+.profile-avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--tv-surface-2);
+  border: 2px solid var(--tv-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--tv-accent);
+  flex-shrink: 0;
+}
+
+.profile-username {
+  color: var(--tv-text);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ── List card ─────────────────────────────────────── */
+.list-card {
+  background: var(--tv-surface-2);
+  border: 1px solid var(--tv-border);
+  border-radius: 8px;
+  padding: 1rem;
+  height: 100%;
+}
+
+.list-card-name {
+  color: var(--tv-text);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.list-card-desc {
+  color: var(--tv-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.list-card-count {
+  color: var(--tv-accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ── Rated stars ───────────────────────────────────── */
+.rated-score {
+  margin: 0.3rem 0;
+}
+
+.star-filled {
+  color: #f4c542;
+  font-size: 0.85rem;
+}
+
+.star-empty {
+  color: var(--tv-border);
+  font-size: 0.85rem;
 }

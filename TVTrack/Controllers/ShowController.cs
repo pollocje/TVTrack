@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TVTrack.Models;
 using TVTrack.Models.Repos;
 using TVTrack.Models.ViewModels;
+using static TVTrack.Models.ViewModels.ShowViewModel;
 using TVTrack.Services;
 
 namespace TVTrack.Controllers
@@ -57,6 +58,8 @@ namespace TVTrack.Controllers
                     var userId = _userManager.GetUserId(User)!;
                     viewModel.IsInWatchlist = await _showRepo.IsInWatchlistAsync(userId, dbShow.Id);
                     viewModel.UserRating = await _showRepo.GetUserRatingAsync(userId, dbShow.Id);
+                    var lists = await _showRepo.GetUserListsAsync(userId);
+                    viewModel.UserLists = lists.Select(l => new CustomListSummary { Id = l.Id, Name = l.Name }).ToList();
                 }
             }
 
@@ -119,6 +122,37 @@ namespace TVTrack.Controllers
 
             var userId = _userManager.GetUserId(User)!;
             await _showRepo.AddReviewAsync(userId, show.Id, comment);
+            return RedirectToAction(nameof(Details), new { id = tmdbId });
+        }
+
+        // POST /Show/AddToList
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> AddToList(int tmdbId, int listId)
+        {
+            var show = await EnsureShowInDbAsync(tmdbId);
+            if (show == null) return NotFound();
+
+            var userId = _userManager.GetUserId(User)!;
+            await _showRepo.AddShowToListAsync(listId, userId, show.Id);
+            return RedirectToAction(nameof(Details), new { id = tmdbId });
+        }
+
+        // POST /Show/CreateList
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> CreateList(int tmdbId, string listName)
+        {
+            if (string.IsNullOrWhiteSpace(listName))
+                return RedirectToAction(nameof(Details), new { id = tmdbId });
+
+            var userId = _userManager.GetUserId(User)!;
+            var list = await _showRepo.CreateListAsync(userId, listName.Trim());
+
+            var show = await EnsureShowInDbAsync(tmdbId);
+            if (show != null)
+                await _showRepo.AddShowToListAsync(list.Id, userId, show.Id);
+
             return RedirectToAction(nameof(Details), new { id = tmdbId });
         }
 

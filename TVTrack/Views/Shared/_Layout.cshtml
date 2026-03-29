@@ -25,6 +25,12 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Account" asp-action="Profile">My Profile</a>
+                            </li>
+                        }
                     </ul>
 
                     <form class="d-flex" asp-controller="Show" asp-action="Search" method="get">

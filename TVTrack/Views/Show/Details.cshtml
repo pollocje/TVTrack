@@ -54,10 +54,10 @@
             <p class="overview-text">@Model.Overview</p>
         }
 
-        <!-- Watchlist action -->
+        <!-- Watchlist + List actions -->
         @if (isAuth)
         {
-            <div class="mt-3">
+            <div class="mt-3 d-flex flex-wrap gap-2 align-items-center">
                 @if (Model.IsInWatchlist)
                 {
                     <form asp-action="RemoveFromWatchlist" method="post" style="display:inline">
@@ -72,6 +72,52 @@
                         <button type="submit" class="btn-watchlist-add">+ Add to Watchlist</button>
                     </form>
                 }
+
+                <button type="button" class="btn-list-add" data-bs-toggle="modal" data-bs-target="#addToListModal">
+                    &#9776; Add to List
+                </button>
+            </div>
+        }
+
+        <!-- Add to List Modal -->
+        @if (isAuth)
+        {
+            <div class="modal fade" id="addToListModal" tabindex="-1" aria-labelledby="addToListModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content modal-dark">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addToListModalLabel">Add to List</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            @if (Model.UserLists.Any())
+                            {
+                                <form asp-action="AddToList" method="post">
+                                    <input type="hidden" name="tmdbId" value="@Model.TmdbId" />
+                                    <label class="form-label text-light">Choose an existing list</label>
+                                    <select name="listId" class="form-select form-select-dark mb-3">
+                                        @foreach (var list in Model.UserLists)
+                                        {
+                                            <option value="@list.Id">@list.Name</option>
+                                        }
+                                    </select>
+                                    <button type="submit" class="btn-submit-review w-100">Add to Selected List</button>
+                                </form>
+                                <hr class="divider-dark" />
+                            }
+
+                            <form asp-action="CreateList" method="post">
+                                <input type="hidden" name="tmdbId" value="@Model.TmdbId" />
+                                <label class="form-label text-light">Create a new list</label>
+                                <input type="text" name="listName" class="form-control form-control-dark mb-3"
+                                       placeholder="List name..." maxlength="100" required />
+                                <button type="submit" class="btn-watchlist-add w-100">Create &amp; Add Show</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         }
     </div>

@@ -13,5 +13,12 @@ namespace TVTrack.Models.ViewModels
         public int? UserRating { get; set; }
         public bool IsInWatchlist { get; set; }
         public List<ReviewItemViewModel> Reviews { get; set; } = new List<ReviewItemViewModel>();
+        public List<CustomListSummary> UserLists { get; set; } = new List<CustomListSummary>();
+    }
+
+    public class CustomListSummary
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
     }
 }

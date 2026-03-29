@@ -9,5 +9,17 @@ namespace TVTrack.Models.ViewModels
         public int FollowersCount { get; set; }
         public int FollowingCount { get; set; }
         public bool IsFollowing { get; set; }
+
+        public List<ShowCardViewModel> Watchlist { get; set; } = new();
+        public List<ListSummaryViewModel> Lists { get; set; } = new();
+        public List<RatedShowViewModel> Ratings { get; set; } = new();
+    }
+
+    public class RatedShowViewModel
+    {
+        public int TmdbId { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string? PosterUrl { get; set; }
+        public int Score { get; set; }
     }
 }

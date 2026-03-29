@@ -1,0 +1,133 @@
+@model TVTrack.Models.ViewModels.ProfileViewModel
+@{
+    ViewData["Title"] = Model.Username + "'s Profile";
+}
+
+<!-- ── Profile header ─────────────────────────────── -->
+<div class="section-card mb-4 d-flex align-items-center gap-4">
+    @if (!string.IsNullOrEmpty(Model.AvatarUrl))
+    {
+        <img src="@Model.AvatarUrl" class="profile-avatar" alt="@Model.Username avatar" />
+    }
+    else
+    {
+        <div class="profile-avatar-placeholder">@Model.Username[0].ToString().ToUpper()</div>
+    }
+
+    <div>
+        <h2 class="profile-username mb-1">@Model.Username</h2>
+        @if (!string.IsNullOrEmpty(Model.Bio))
+        {
+            <p class="overview-text mb-2">@Model.Bio</p>
+        }
+        <div class="d-flex gap-3">
+            <span class="meta-pill">@Model.Watchlist.Count watching</span>
+            <span class="meta-pill">@Model.Lists.Count lists</span>
+            <span class="meta-pill">@Model.Ratings.Count rated</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── Watchlist ──────────────────────────────────── -->
+<div class="section-card mb-4">
+    <h5>Watchlist (@Model.Watchlist.Count)</h5>
+
+    @if (Model.Watchlist.Any())
+    {
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 mt-1">
+            @foreach (var show in Model.Watchlist)
+            {
+                <div class="col">
+                    <div class="show-card h-100">
+                        @if (show.PosterUrl != null)
+                        {
+                            <img src="@show.PosterUrl" class="show-card-poster" alt="@show.Title" />
+                        }
+                        else
+                        {
+                            <div class="show-card-poster-placeholder">No Image</div>
+                        }
+                        <div class="show-card-body">
+                            <div class="show-card-title">@show.Title</div>
+                            <a asp-controller="Show" asp-action="Details" asp-route-id="@show.TmdbId"
+                               class="show-card-link mt-2">View</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted mt-2 mb-0">No shows in your watchlist yet.</p>
+    }
+</div>
+
+<!-- ── Custom Lists ───────────────────────────────── -->
+<div class="section-card mb-4">
+    <h5>My Lists (@Model.Lists.Count)</h5>
+
+    @if (Model.Lists.Any())
+    {
+        <div class="row g-3 mt-1">
+            @foreach (var list in Model.Lists)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="list-card">
+                        <div class="list-card-name">@list.Name</div>
+                        @if (!string.IsNullOrEmpty(list.Description))
+                        {
+                            <div class="list-card-desc">@list.Description</div>
+                        }
+                        <div class="list-card-count">@list.ShowCount show@(list.ShowCount != 1 ? "s" : "")</div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted mt-2 mb-0">No lists created yet. Add a show to a list from its details page.</p>
+    }
+</div>
+
+<!-- ── Ratings ────────────────────────────────────── -->
+<div class="section-card mb-4">
+    <h5>Ratings (@Model.Ratings.Count)</h5>
+
+    @if (Model.Ratings.Any())
+    {
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 mt-1">
+            @foreach (var rated in Model.Ratings)
+            {
+                <div class="col">
+                    <div class="show-card h-100">
+                        @if (rated.PosterUrl != null)
+                        {
+                            <img src="@rated.PosterUrl" class="show-card-poster" alt="@rated.Title" />
+                        }
+                        else
+                        {
+                            <div class="show-card-poster-placeholder">No Image</div>
+                        }
+                        <div class="show-card-body">
+                            <div class="show-card-title">@rated.Title</div>
+                            <div class="rated-score">
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <span class="@(i <= rated.Score ? "star-filled" : "star-empty")">&#9733;</span>
+                                }
+                            </div>
+                            <a asp-controller="Show" asp-action="Details" asp-route-id="@rated.TmdbId"
+                               class="show-card-link mt-2">View</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted mt-2 mb-0">No shows rated yet.</p>
+    }
+</div>

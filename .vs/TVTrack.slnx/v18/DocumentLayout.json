@@ -159,8 +159,7 @@
               "RelativeToolTip": "TVTrack\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T20:46:33.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-27T20:46:33.216Z"
             },
             {
               "$type": "Document",
@@ -172,8 +171,7 @@
               "RelativeToolTip": "TVTrack\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-27T20:42:57.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-27T20:42:57.092Z"
             },
             {
               "$type": "Document",
@@ -185,8 +183,7 @@
               "RelativeToolTip": "TVTrack\\Views\\TVShow.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-23T16:03:02.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T16:03:02.553Z"
             },
             {
               "$type": "Document",
@@ -198,8 +195,7 @@
               "RelativeToolTip": "TVTrack\\Views\\Follows.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-23T16:02:35.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T16:02:35.462Z"
             },
             {
               "$type": "Document",
@@ -211,8 +207,7 @@
               "RelativeToolTip": "TVTrack\\Views\\Search.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-23T16:01:59.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T16:01:59.09Z"
             },
             {
               "$type": "Document",
@@ -224,8 +219,7 @@
               "RelativeToolTip": "TVTrack\\Views\\Profile.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-23T16:01:48.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T16:01:48.94Z"
             },
             {
               "$type": "Document",
@@ -237,8 +231,7 @@
               "RelativeToolTip": "TVTrack\\Views\\Register.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-23T16:01:17.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T16:01:17.387Z"
             },
             {
               "$type": "Document",
@@ -250,8 +243,7 @@
               "RelativeToolTip": "TVTrack\\Views\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-23T16:01:02.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T16:01:02.258Z"
             },
             {
               "$type": "Document",
@@ -263,8 +255,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\UserCardViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T16:00:21.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T16:00:21.503Z"
             },
             {
               "$type": "Document",
@@ -276,8 +267,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\FollowListViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T16:00:02.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T16:00:02.27Z"
             },
             {
               "$type": "Document",
@@ -289,8 +279,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\MyListsViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:59:53.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:59:53.137Z"
             },
             {
               "$type": "Document",
@@ -302,8 +291,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ShowCardViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:59:44.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:59:44.554Z"
             },
             {
               "$type": "Document",
@@ -315,8 +303,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ListViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:59:34.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:59:34.013Z"
             },
             {
               "$type": "Document",
@@ -328,8 +315,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\RegisterViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:59:25.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:59:25.77Z"
             },
             {
               "$type": "Document",
@@ -341,8 +327,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\LoginViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:59:12.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:59:12.055Z"
             },
             {
               "$type": "Document",
@@ -354,8 +339,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ProfileViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:58:58.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:58:58.63Z"
             },
             {
               "$type": "Document",
@@ -367,8 +351,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ReviewItemViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:58:51.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:58:51.986Z"
             },
             {
               "$type": "Document",
@@ -380,8 +363,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\ShowViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:58:44.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:58:44.868Z"
             },
             {
               "$type": "Document",
@@ -393,8 +375,7 @@
               "RelativeToolTip": "TVTrack\\Models\\ViewModels\\SearchViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:58:38.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:58:38.358Z"
             },
             {
               "$type": "Document",
@@ -406,8 +387,7 @@
               "RelativeToolTip": "TVTrack\\Models\\Repos\\ShowRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:57:10.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:57:10.166Z"
             },
             {
               "$type": "Document",
@@ -419,8 +399,7 @@
               "RelativeToolTip": "TVTrack\\Models\\Repos\\ReviewRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:56:58.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:56:58.265Z"
             },
             {
               "$type": "Document",
@@ -432,8 +411,7 @@
               "RelativeToolTip": "TVTrack\\Models\\Repos\\ListRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:56:52.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:56:52.128Z"
             },
             {
               "$type": "Document",
@@ -445,8 +423,7 @@
               "RelativeToolTip": "TVTrack\\Models\\Repos\\UserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:56:46.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:56:46.438Z"
             },
             {
               "$type": "Document",
@@ -458,8 +435,7 @@
               "RelativeToolTip": "TVTrack\\Models\\WatchList.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:56:02.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:56:02.591Z"
             },
             {
               "$type": "Document",
@@ -471,8 +447,7 @@
               "RelativeToolTip": "TVTrack\\Models\\TVShow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:55:55.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:55:55.524Z"
             },
             {
               "$type": "Document",
@@ -484,8 +459,7 @@
               "RelativeToolTip": "TVTrack\\Models\\Review.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:55:42.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:55:42.335Z"
             },
             {
               "$type": "Document",
@@ -497,8 +471,7 @@
               "RelativeToolTip": "TVTrack\\Models\\Rating.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:55:36.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:55:36.019Z"
             },
             {
               "$type": "Document",
@@ -510,8 +483,7 @@
               "RelativeToolTip": "TVTrack\\Models\\Follow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:55:23.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:55:23.511Z"
             },
             {
               "$type": "Document",
@@ -523,8 +495,7 @@
               "RelativeToolTip": "TVTrack\\Models\\CustomList.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:55:17.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:55:17.822Z"
             },
             {
               "$type": "Document",
@@ -536,8 +507,7 @@
               "RelativeToolTip": "TVTrack\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T15:55:09.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:55:09.224Z"
             }
           ]
         }
