@@ -67,6 +67,7 @@ namespace TVTrack.Controllers
         }
 
         // GET /Show/Season/12345/1
+        [HttpGet("Show/Season/{id}/{season}")]
         public async Task<IActionResult> Season(int id, int season)
         {
             var viewModel = await _tmdbService.GetSeasonAsync(id, season);
