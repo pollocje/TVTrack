@@ -1,0 +1,105 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using TVTrack.Models.ViewModels;
+
+namespace TVTrack.Services
+{
+    public class TmdbService : ITmdbService
+    {
+        private readonly HttpClient _httpClient;
+        private readonly string _apiKey;
+        private readonly string _imageBaseUrl;
+
+        public TmdbService(HttpClient httpClient, IConfiguration configuration)
+        {
+            _httpClient = httpClient;
+            _apiKey = configuration["Tmdb:ApiKey"]!;
+            _imageBaseUrl = configuration["Tmdb:ImageBaseUrl"]!;
+            _httpClient.BaseAddress = new Uri(configuration["Tmdb:BaseUrl"]!);
+        }
+
+        public async Task<SearchViewModel> SearchShowsAsync(string query, int page = 1)
+        {
+            var url = $"/3/search/tv?api_key={_apiKey}&query={Uri.EscapeDataString(query)}&page={page}";
+            var response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize<TmdbSearchResponse>(json);
+
+            return new SearchViewModel
+            {
+                Query = query,
+                Page = result?.Page ?? 1,
+                TotalResults = result?.TotalResults ?? 0,
+                Results = result?.Results.Select(r => new ShowCardViewModel
+                {
+                    TmdbId = r.Id,
+                    Title = r.Name,
+                    PosterUrl = r.PosterPath != null ? $"{_imageBaseUrl}{r.PosterPath}" : null
+                }).ToList() ?? new List<ShowCardViewModel>()
+            };
+        }
+
+        public async Task<ShowViewModel?> GetShowDetailsAsync(int tmdbId)
+        {
+            var url = $"/3/tv/{tmdbId}?api_key={_apiKey}";
+            var response = await _httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var json = await response.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize<TmdbShowDetails>(json);
+
+            if (result == null)
+                return null;
+
+            return new ShowViewModel
+            {
+                TmdbId = result.Id,
+                Title = result.Name,
+                Overview = result.Overview,
+                PosterUrl = result.PosterPath != null ? $"{_imageBaseUrl}{result.PosterPath}" : null
+            };
+        }
+
+        // --- Private DTOs for deserializing TMDB responses ---
+
+        private class TmdbSearchResponse
+        {
+            [JsonPropertyName("page")]
+            public int Page { get; set; }
+
+            [JsonPropertyName("results")]
+            public List<TmdbShowResult> Results { get; set; } = new();
+
+            [JsonPropertyName("total_results")]
+            public int TotalResults { get; set; }
+        }
+
+        private class TmdbShowResult
+        {
+            [JsonPropertyName("id")]
+            public int Id { get; set; }
+
+            [JsonPropertyName("name")]
+            public string Name { get; set; } = string.Empty;
+
+            [JsonPropertyName("overview")]
+            public string? Overview { get; set; }
+
+            [JsonPropertyName("poster_path")]
+            public string? PosterPath { get; set; }
+
+            [JsonPropertyName("first_air_date")]
+            public string? FirstAirDate { get; set; }
+        }
+
+        private class TmdbShowDetails : TmdbShowResult
+        {
+            [JsonPropertyName("number_of_seasons")]
+            public int? NumberOfSeasons { get; set; }
+        }
+    }
+}

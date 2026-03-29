@@ -1,0 +1,65 @@
+TVTrack Dev Session Notes - 2026-03-28
+=======================================
+
+Branch: Jeff (created from dev)
+
+What we did this session:
+--------------------------
+
+1. READ THE PROPOSAL
+   - Reviewed CSharpGroup8Proposal.pdf to understand the full project scope
+   - TVTrack is a Letterboxd-style TV show tracker using ASP.NET Core MVC + EF Core + TMDB API
+   - Jeff's responsibilities: Add Show to Account use case, Controllers
+
+2. REVIEWED TMDB API
+   - Checked the /search/tv and /tv/{id} endpoints
+   - Identified which fields to cache locally vs fetch on demand
+   - Key fields stored locally: TmdbId, Title, Overview, PosterPath, FirstAirDate, NumberOfSeasons
+
+3. FILLED IN DOMAIN MODELS (all were empty stubs)
+   - User.cs -> renamed class to AppUser, extends IdentityUser (adds Bio, ProfilePictureUrl)
+   - TVShow.cs -> TmdbId, Title, Overview, PosterPath, FirstAirDate, NumberOfSeasons + nav props
+   - Review.cs -> UserId, ShowId, Comment, CreatedAt + nav props
+   - Rating.cs -> UserId, ShowId, Score (1-5), RatedAt + nav props
+   - Follow.cs -> FollowerId, FollowedId, FollowedAt (kept simple, no nav props to avoid EF issues)
+   - WatchList.cs -> UserId, ShowId, AddedAt + nav props
+   - CustomList.cs -> OwnerId, Name, Description, CreatedAt, ShareToken + nav props
+   - CustomListItem.cs -> NEW FILE, replaces CustomListShow.cs as junction table with own Id
+
+4. UPDATED AppDbContext
+   - Changed from IdentityDbContext<IdentityUser> to IdentityDbContext<AppUser>
+   - Added DbSets for all domain models
+   - Kept OnModelCreating simple (just calls base) - avoided fluent API config we haven't learned yet
+
+5. UPDATED Program.cs
+   - Swapped IdentityUser for AppUser in AddDefaultIdentity
+   - Added TmdbService registration
+
+6. RAN MIGRATIONS
+   - Added migration: AddDomainModels
+   - Applied to database (TVTrackDb on localdb)
+   - All custom tables now exist in SQL Server
+
+7. FILLED IN ALL VIEWMODELS (all were empty stubs)
+   - SearchViewModel, ShowViewModel, ShowCardViewModel, ReviewItemViewModel
+   - ProfileViewModel, UserCardViewModel, FollowListViewModel
+   - ListViewModel, MyListsViewModel, ListSummaryViewModel (new file)
+   - LoginViewModel, RegisterViewModel (includes DataAnnotations validation)
+
+8. BUILT TMDB SERVICE
+   - Created Services/ITmdbService.cs (interface)
+   - Created Services/TmdbService.cs (implementation using HttpClient)
+   - Two methods: SearchShowsAsync(query, page) and GetShowDetailsAsync(tmdbId)
+   - Uses System.Text.Json to deserialize TMDB responses
+   - Maps poster_path to full image URL (https://image.tmdb.org/t/p/w500)
+   - Registered in Program.cs using AddHttpClient<ITmdbService, TmdbService>()
+   - API key added to appsettings.json under Tmdb:ApiKey
+
+What's left to do:
+-------------------
+- Controllers (AccountController, ShowController, etc.) - Jeff's responsibility
+- Views (Login, Register, Profile, Search, Show detail, etc.) - Austin's responsibility
+- Repositories (UserRepository, ShowRepository, ReviewRepository, ListRepository) - stubs exist
+- Services beyond TMDB (business logic services) - Sebastion's responsibility
+- Social features (Follow/Unfollow, Profile editing) - Austin's responsibility
+- Lists CRUD (Create, Delete, Add/Remove shows) - Sebastion's responsibility

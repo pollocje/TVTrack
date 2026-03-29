@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "J:\\CSharp\\TVTrack\\TVTrack\\TVTrack.csproj": {}
+    "J:\\Csharp\\TVTrack\\TVTrack\\TVTrack.csproj": {}
   },
   "projects": {
-    "J:\\CSharp\\TVTrack\\TVTrack\\TVTrack.csproj": {
+    "J:\\Csharp\\TVTrack\\TVTrack\\TVTrack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\CSharp\\TVTrack\\TVTrack\\TVTrack.csproj",
+        "projectUniqueName": "J:\\Csharp\\TVTrack\\TVTrack\\TVTrack.csproj",
         "projectName": "TVTrack",
-        "projectPath": "J:\\CSharp\\TVTrack\\TVTrack\\TVTrack.csproj",
+        "projectPath": "J:\\Csharp\\TVTrack\\TVTrack\\TVTrack.csproj",
         "packagesPath": "C:\\Users\\Jeff\\.nuget\\packages\\",
-        "outputPath": "J:\\CSharp\\TVTrack\\TVTrack\\obj\\",
+        "outputPath": "J:\\Csharp\\TVTrack\\TVTrack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

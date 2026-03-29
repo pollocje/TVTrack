@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
 using TVTrack.Data;
+using TVTrack.Models;
+using TVTrack.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +11,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>()
+builder.Services.AddDefaultIdentity<AppUser>()
     .AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddHttpClient<ITmdbService, TmdbService>();
 
 var app = builder.Build();
 
