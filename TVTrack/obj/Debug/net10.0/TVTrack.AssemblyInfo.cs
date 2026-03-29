@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TVTrack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1185769155501bb7210c07e33c287a2294382e00")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e044da772af4c930d505a556e815620119de71f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TVTrack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TVTrack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

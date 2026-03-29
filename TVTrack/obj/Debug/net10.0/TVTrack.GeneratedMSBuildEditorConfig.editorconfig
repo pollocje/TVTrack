@@ -66,6 +66,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[J:/Csharp/TVTrack/TVTrack/Views/Show/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[J:/Csharp/TVTrack/TVTrack/Views/Show/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd1xTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [J:/Csharp/TVTrack/TVTrack/Views/TVShow.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFZTaG93LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

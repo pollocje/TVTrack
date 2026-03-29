@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TVTrack.Data;
 using TVTrack.Models;
+using TVTrack.Models.Repos;
 using TVTrack.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddDefaultIdentity<AppUser>()
     .AddEntityFrameworkStores<AppDbContext>();
 
 builder.Services.AddHttpClient<ITmdbService, TmdbService>();
+builder.Services.AddScoped<ShowRepository>();
 
 var app = builder.Build();
 

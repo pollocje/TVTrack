@@ -1,0 +1,174 @@
+@model TVTrack.Models.ViewModels.ShowViewModel
+@{
+    ViewData["Title"] = Model.Title;
+    bool isAuth = User.Identity?.IsAuthenticated == true;
+
+    string firstYear = Model.FirstAirDate?.Length >= 4 ? Model.FirstAirDate[..4] : Model.FirstAirDate ?? "";
+}
+
+<!-- ── Top section: poster + info ──────────────────── -->
+<div class="row g-4 mb-4">
+
+    <!-- Poster -->
+    <div class="col-md-3 col-lg-2">
+        @if (Model.PosterUrl != null)
+        {
+            <img src="@Model.PosterUrl" class="details-poster" alt="@Model.Title poster" />
+        }
+        else
+        {
+            <div class="details-poster-placeholder">No Image</div>
+        }
+    </div>
+
+    <!-- Info -->
+    <div class="col-md-9 col-lg-10">
+        <h1 class="details-title">@Model.Title</h1>
+
+        <!-- Meta pills -->
+        <div class="mb-3">
+            @if (!string.IsNullOrEmpty(firstYear))
+            {
+                <span class="meta-pill">@firstYear</span>
+            }
+            @if (Model.NumberOfSeasons != null)
+            {
+                <span class="meta-pill">@Model.NumberOfSeasons season@(Model.NumberOfSeasons != 1 ? "s" : "")</span>
+            }
+        </div>
+
+        <!-- Avg rating -->
+        @if (Model.AvgRating != null)
+        {
+            <div class="mb-3">
+                <span class="avg-rating">
+                    &#9733; @Model.AvgRating.Value.ToString("F1")
+                    <span>/ 5</span>
+                </span>
+            </div>
+        }
+
+        <!-- Overview -->
+        @if (!string.IsNullOrEmpty(Model.Overview))
+        {
+            <p class="overview-text">@Model.Overview</p>
+        }
+
+        <!-- Watchlist action -->
+        @if (isAuth)
+        {
+            <div class="mt-3">
+                @if (Model.IsInWatchlist)
+                {
+                    <form asp-action="RemoveFromWatchlist" method="post" style="display:inline">
+                        <input type="hidden" name="tmdbId" value="@Model.TmdbId" />
+                        <button type="submit" class="btn-watchlist-remove">&#10003; In Watchlist &mdash; Remove</button>
+                    </form>
+                }
+                else
+                {
+                    <form asp-action="AddToWatchlist" method="post" style="display:inline">
+                        <input type="hidden" name="tmdbId" value="@Model.TmdbId" />
+                        <button type="submit" class="btn-watchlist-add">+ Add to Watchlist</button>
+                    </form>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<!-- ── Actions: Rate + Review ──────────────────────── -->
+@if (isAuth)
+{
+    <div class="row g-3 mb-4">
+
+        <!-- Rate -->
+        <div class="col-md-6">
+            <div class="section-card">
+                <h5>Your Rating</h5>
+                <form asp-action="Rate" method="post" id="rateForm">
+                    <input type="hidden" name="tmdbId" value="@Model.TmdbId" />
+                    <div class="star-rating" id="starRating" data-current="@(Model.UserRating ?? 0)">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <button type="submit" name="score" value="@i"
+                                    class="star-btn @(Model.UserRating >= i ? "active" : "")"
+                                    data-value="@i">&#9733;</button>
+                        }
+                    </div>
+                    @if (Model.UserRating != null)
+                    {
+                        <p style="color:var(--tv-muted); font-size:0.8rem; margin-top:0.5rem;">
+                            Your rating: @Model.UserRating / 5 &mdash; click a star to update
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="color:var(--tv-muted); font-size:0.8rem; margin-top:0.5rem;">
+                            Click a star to rate
+                        </p>
+                    }
+                </form>
+            </div>
+        </div>
+
+        <!-- Review -->
+        <div class="col-md-6">
+            <div class="section-card">
+                <h5>Write a Review</h5>
+                <form asp-action="Review" method="post">
+                    <input type="hidden" name="tmdbId" value="@Model.TmdbId" />
+                    <textarea name="comment" class="review-textarea" rows="3"
+                              placeholder="Share your thoughts on this show..."></textarea>
+                    <button type="submit" class="btn-submit-review">Post Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="section-card mb-4">
+        <p class="auth-prompt mb-0">
+            <a href="/Identity/Account/Login">Log in</a> to add this show to your watchlist, rate it, or write a review.
+        </p>
+    </div>
+}
+
+<!-- ── Reviews list ─────────────────────────────────── -->
+@if (Model.Reviews.Any())
+{
+    <div class="section-card">
+        <h5>Reviews (@Model.Reviews.Count)</h5>
+        @foreach (var review in Model.Reviews)
+        {
+            <div class="review-card">
+                <p class="review-text">@review.Comment</p>
+                <span class="review-author">&#8212; @review.PostedBy</span>
+            </div>
+        }
+    </div>
+}
+
+@section Scripts {
+    <script>
+        // Star hover effect
+        const stars = document.querySelectorAll('.star-btn');
+        const current = parseInt(document.getElementById('starRating')?.dataset.current ?? '0');
+
+        stars.forEach(star => {
+            star.addEventListener('mouseenter', () => {
+                const val = parseInt(star.dataset.value);
+                stars.forEach(s => {
+                    s.classList.toggle('active', parseInt(s.dataset.value) <= val);
+                });
+            });
+        });
+
+        document.getElementById('starRating')?.addEventListener('mouseleave', () => {
+            stars.forEach(s => {
+                s.classList.toggle('active', parseInt(s.dataset.value) <= current);
+            });
+        });
+    </script>
+}

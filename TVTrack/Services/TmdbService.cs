@@ -60,7 +60,10 @@ namespace TVTrack.Services
                 TmdbId = result.Id,
                 Title = result.Name,
                 Overview = result.Overview,
-                PosterUrl = result.PosterPath != null ? $"{_imageBaseUrl}{result.PosterPath}" : null
+                PosterPath = result.PosterPath,
+                PosterUrl = result.PosterPath != null ? $"{_imageBaseUrl}{result.PosterPath}" : null,
+                FirstAirDate = result.FirstAirDate,
+                NumberOfSeasons = result.NumberOfSeasons
             };
         }
 
