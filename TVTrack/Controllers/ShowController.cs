@@ -66,6 +66,16 @@ namespace TVTrack.Controllers
             return View(viewModel);
         }
 
+        // GET /Show/Season/12345/1
+        public async Task<IActionResult> Season(int id, int season)
+        {
+            var viewModel = await _tmdbService.GetSeasonAsync(id, season);
+            if (viewModel == null)
+                return NotFound();
+
+            return Json(viewModel);
+        }
+
         // POST /Show/AddToWatchlist
         [HttpPost]
         [Authorize]
