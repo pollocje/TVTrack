@@ -67,6 +67,35 @@ namespace TVTrack.Services
             };
         }
 
+        public async Task<SeasonViewModel?> GetSeasonAsync(int tmdbId, int seasonNumber)
+        {
+            var url = $"/3/tv/{tmdbId}/season/{seasonNumber}?api_key={_apiKey}";
+            var response = await _httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var json = await response.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize<TmdbSeasonDetails>(json);
+
+            if (result == null)
+                return null;
+
+            return new SeasonViewModel
+            {
+                SeasonNumber = result.SeasonNumber,
+                Name = result.Name,
+                Episodes = result.Episodes.Select(e => new EpisodeViewModel
+                {
+                    EpisodeNumber = e.EpisodeNumber,
+                    Name = e.Name,
+                    Overview = e.Overview,
+                    StillUrl = e.StillPath != null ? $"{_imageBaseUrl}{e.StillPath}" : null,
+                    AirDate = e.AirDate
+                }).ToList()
+            };
+        }
+
         // --- Private DTOs for deserializing TMDB responses ---
 
         private class TmdbSearchResponse
@@ -103,6 +132,36 @@ namespace TVTrack.Services
         {
             [JsonPropertyName("number_of_seasons")]
             public int? NumberOfSeasons { get; set; }
+        }
+
+        private class TmdbSeasonDetails
+        {
+            [JsonPropertyName("season_number")]
+            public int SeasonNumber { get; set; }
+
+            [JsonPropertyName("name")]
+            public string? Name { get; set; }
+
+            [JsonPropertyName("episodes")]
+            public List<TmdbEpisode> Episodes { get; set; } = new();
+        }
+
+        private class TmdbEpisode
+        {
+            [JsonPropertyName("episode_number")]
+            public int EpisodeNumber { get; set; }
+
+            [JsonPropertyName("name")]
+            public string Name { get; set; } = string.Empty;
+
+            [JsonPropertyName("overview")]
+            public string? Overview { get; set; }
+
+            [JsonPropertyName("still_path")]
+            public string? StillPath { get; set; }
+
+            [JsonPropertyName("air_date")]
+            public string? AirDate { get; set; }
         }
     }
 }

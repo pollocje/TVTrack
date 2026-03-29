@@ -485,6 +485,131 @@ body {
   color: var(--tv-accent);
 }
 
+/* ── Season / episode browser ──────────────────────── */
+.season-select {
+  background-color: var(--tv-surface-2);
+  border: 1px solid var(--tv-border);
+  color: var(--tv-text);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.season-select:focus {
+  border-color: var(--tv-accent);
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(74, 158, 255, 0.2);
+}
+
+.season-select option {
+  background-color: var(--tv-surface-2);
+  color: var(--tv-text);
+}
+
+.episode-count-label {
+  color: var(--tv-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.episode-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.ep-nav-btn {
+  background-color: var(--tv-surface-2);
+  border: 1px solid var(--tv-border);
+  color: var(--tv-text);
+  font-size: 1.4rem;
+  line-height: 1;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ep-nav-btn:hover:not(:disabled) {
+  border-color: var(--tv-accent);
+  color: var(--tv-accent);
+}
+
+.ep-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.ep-indicator {
+  color: var(--tv-muted);
+  font-size: 0.85rem;
+  min-width: 4rem;
+}
+
+.episode-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: var(--tv-surface-2);
+  border: 1px solid var(--tv-border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .episode-card {
+    flex-direction: column;
+  }
+}
+
+.episode-still {
+  width: 220px;
+  min-width: 220px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #1a2540;
+}
+
+@media (max-width: 600px) {
+  .episode-still {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+.episode-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.episode-title {
+  color: var(--tv-text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.episode-desc {
+  color: #b0c4d8;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.episode-loading {
+  color: var(--tv-muted);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+
 /* ── Focus ring override ───────────────────────────── */
 .btn:focus, .btn:active:focus, .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(74, 158, 255, 0.3);

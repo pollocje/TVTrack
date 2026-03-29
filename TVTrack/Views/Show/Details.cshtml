@@ -77,6 +77,43 @@
     </div>
 </div>
 
+<!-- ── Season / Episode Browser ────────────────────── -->
+@if (Model.NumberOfSeasons != null && Model.NumberOfSeasons > 0)
+{
+    <div class="section-card mb-4" id="seasonBrowser">
+        <div class="d-flex align-items-center gap-3 mb-3">
+            <label for="seasonSelect" class="fw-semibold mb-0" style="white-space:nowrap">Season</label>
+            <select id="seasonSelect" class="season-select">
+                @for (int s = 1; s <= Model.NumberOfSeasons; s++)
+                {
+                    <option value="@s">Season @s</option>
+                }
+            </select>
+        </div>
+
+        <!-- Episode count + nav -->
+        <div id="episodeNav" style="display:none">
+            <p id="episodeCount" class="episode-count-label"></p>
+            <div class="episode-nav-row">
+                <button id="prevEp" class="ep-nav-btn" disabled>&lsaquo;</button>
+                <span id="epIndicator" class="ep-indicator"></span>
+                <button id="nextEp" class="ep-nav-btn">&rsaquo;</button>
+            </div>
+        </div>
+
+        <!-- Episode card -->
+        <div id="episodeCard" style="display:none" class="episode-card mt-3">
+            <img id="epStill" src="" alt="" class="episode-still" />
+            <div class="episode-info">
+                <h5 id="epTitle" class="episode-title"></h5>
+                <p id="epDesc" class="episode-desc"></p>
+            </div>
+        </div>
+
+        <div id="episodeLoading" style="display:none" class="episode-loading">Loading...</div>
+    </div>
+}
+
 <!-- ── Actions: Rate + Review ──────────────────────── -->
 @if (isAuth)
 {
@@ -170,5 +207,76 @@ else
                 s.classList.toggle('active', parseInt(s.dataset.value) <= current);
             });
         });
+
+        // Season / episode browser
+        (function () {
+            const showId = @Model.TmdbId;
+            const seasonSelect = document.getElementById('seasonSelect');
+            if (!seasonSelect) return;
+
+            let episodes = [];
+            let currentIndex = 0;
+
+            const episodeNav    = document.getElementById('episodeNav');
+            const episodeCard   = document.getElementById('episodeCard');
+            const episodeLoading = document.getElementById('episodeLoading');
+            const episodeCount  = document.getElementById('episodeCount');
+            const epIndicator   = document.getElementById('epIndicator');
+            const epStill       = document.getElementById('epStill');
+            const epTitle       = document.getElementById('epTitle');
+            const epDesc        = document.getElementById('epDesc');
+            const prevBtn       = document.getElementById('prevEp');
+            const nextBtn       = document.getElementById('nextEp');
+
+            function showEpisode(index) {
+                currentIndex = index;
+                const ep = episodes[index];
+
+                epTitle.textContent = `Ep ${ep.episodeNumber}: ${ep.name}`;
+                epDesc.textContent  = ep.overview || 'No description available.';
+                epIndicator.textContent = `${index + 1} / ${episodes.length}`;
+
+                if (ep.stillUrl) {
+                    epStill.src = ep.stillUrl;
+                    epStill.style.display = '';
+                } else {
+                    epStill.style.display = 'none';
+                }
+
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === episodes.length - 1;
+            }
+
+            async function loadSeason(seasonNumber) {
+                episodeNav.style.display  = 'none';
+                episodeCard.style.display = 'none';
+                episodeLoading.style.display = '';
+
+                try {
+                    const res = await fetch(`/Show/Season/${showId}/${seasonNumber}`);
+                    if (!res.ok) throw new Error('Failed');
+                    const data = await res.json();
+                    episodes = data.episodes || [];
+
+                    episodeLoading.style.display = 'none';
+
+                    if (episodes.length === 0) return;
+
+                    episodeCount.textContent = `${episodes.length} episode${episodes.length !== 1 ? 's' : ''} in this season`;
+                    episodeNav.style.display  = '';
+                    episodeCard.style.display = '';
+                    showEpisode(0);
+                } catch {
+                    episodeLoading.textContent = 'Could not load episodes.';
+                }
+            }
+
+            seasonSelect.addEventListener('change', () => loadSeason(seasonSelect.value));
+            prevBtn.addEventListener('click', () => showEpisode(currentIndex - 1));
+            nextBtn.addEventListener('click', () => showEpisode(currentIndex + 1));
+
+            // Auto-load season 1
+            loadSeason(1);
+        })();
     </script>
 }
