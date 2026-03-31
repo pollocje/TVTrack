@@ -118,16 +118,29 @@
 
                                 <!-- Season number (Season + Episode) -->
                                 <div class="mb-3 d-none" id="seasonField">
-                                    <label class="form-label text-light">Season Number</label>
-                                    <input type="number" name="SeasonNumber" class="form-control form-control-dark" min="1" />
+                                    <label class="form-label text-light">Season</label>
+                                    @if (Model.NumberOfSeasons != null && Model.NumberOfSeasons > 0)
+                                    {
+                                        <select name="SeasonNumber" id="logSeasonSelect" class="form-select form-select-dark">
+                                            @for (int s = 1; s <= Model.NumberOfSeasons; s++)
+                                            {
+                                                <option value="@s">Season @s</option>
+                                            }
+                                        </select>
+                                    }
+                                    else
+                                    {
+                                        <input type="number" name="SeasonNumber" id="logSeasonSelect" class="form-control form-control-dark" min="1" />
+                                    }
                                 </div>
 
                                 <!-- Episode fields -->
                                 <div class="mb-3 d-none" id="episodeFields">
-                                    <label class="form-label text-light">Episode Number</label>
-                                    <input type="number" name="EpisodeNumber" class="form-control form-control-dark mb-2" min="1" />
-                                    <label class="form-label text-light">Episode Title <span class="text-muted">(optional)</span></label>
-                                    <input type="text" name="EpisodeTitle" class="form-control form-control-dark" maxlength="200" />
+                                    <label class="form-label text-light">Episode</label>
+                                    <select name="EpisodeNumber" id="logEpisodeSelect" class="form-select form-select-dark">
+                                        <option value="">Select a season first...</option>
+                                    </select>
+                                    <input type="hidden" name="EpisodeTitle" id="logEpisodeTitleInput" />
                                 </div>
 
                                 <!-- Rating -->
@@ -290,12 +303,62 @@
 
 @section Scripts {
     <script>
+        // Log modal: season/episode dropdowns
+        const logShowId = @Model.TmdbId;
+        const logSeasonSelect = document.getElementById('logSeasonSelect');
+        const logEpisodeSelect = document.getElementById('logEpisodeSelect');
+        const logEpisodeTitleInput = document.getElementById('logEpisodeTitleInput');
+        const logEpisodesCache = {};
+
+        async function loadLogEpisodes(seasonNumber) {
+            logEpisodeSelect.innerHTML = '<option value="">Loading...</option>';
+            if (logEpisodeTitleInput) logEpisodeTitleInput.value = '';
+
+            if (logEpisodesCache[seasonNumber]) {
+                populateLogEpisodes(logEpisodesCache[seasonNumber]);
+                return;
+            }
+            try {
+                const res = await fetch(`/Show/Season/${logShowId}/${seasonNumber}`);
+                if (!res.ok) throw new Error();
+                const data = await res.json();
+                logEpisodesCache[seasonNumber] = data.episodes || [];
+                populateLogEpisodes(logEpisodesCache[seasonNumber]);
+            } catch {
+                logEpisodeSelect.innerHTML = '<option value="">Could not load episodes</option>';
+            }
+        }
+
+        function populateLogEpisodes(episodes) {
+            if (!episodes.length) {
+                logEpisodeSelect.innerHTML = '<option value="">No episodes found</option>';
+                return;
+            }
+            logEpisodeSelect.innerHTML = episodes.map(ep =>
+                `<option value="${ep.episodeNumber}" data-title="${ep.name.replace(/"/g, '&quot;')}">${ep.episodeNumber}. ${ep.name}</option>`
+            ).join('');
+            syncEpisodeTitle();
+        }
+
+        function syncEpisodeTitle() {
+            const opt = logEpisodeSelect?.options[logEpisodeSelect.selectedIndex];
+            if (logEpisodeTitleInput) logEpisodeTitleInput.value = opt?.dataset.title || '';
+        }
+
+        logEpisodeSelect?.addEventListener('change', syncEpisodeTitle);
+
+        logSeasonSelect?.addEventListener('change', () => {
+            const isEpisode = document.querySelector('input[name="LogType"]:checked')?.value === '2';
+            if (isEpisode) loadLogEpisodes(logSeasonSelect.value);
+        });
+
         // Log modal: show/hide season/episode fields based on log type
         document.querySelectorAll('input[name="LogType"]').forEach(radio => {
             radio.addEventListener('change', () => {
                 const val = parseInt(radio.value);
                 document.getElementById('seasonField').classList.toggle('d-none', val === 0);
                 document.getElementById('episodeFields').classList.toggle('d-none', val !== 2);
+                if (val === 2 && logSeasonSelect) loadLogEpisodes(logSeasonSelect.value);
             });
         });
 
