@@ -5,6 +5,7 @@ namespace TVTrack.Models.ViewModels
 {
     public class EditProfileViewModel
     {
+        // Quick model class for editing user profile, has username, bio
         [MaxLength(300)]
         public string? Bio { get; set; }
 

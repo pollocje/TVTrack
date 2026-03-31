@@ -4,6 +4,7 @@ namespace TVTrack.Models
 {
     public class AppUser : IdentityUser
     {
+        // class for user, includes bio, and relations to lows, lists, watchlist
         public string? Bio { get; set; }
         public string? ProfilePictureUrl { get; set; }
 

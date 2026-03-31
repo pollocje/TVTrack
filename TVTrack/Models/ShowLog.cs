@@ -4,6 +4,9 @@ namespace TVTrack.Models
 
     public class ShowLog
     {
+        // Class for the log object of a show
+        // occurs when user marks a show as watched
+        // They can rate, review, and choose between series, episode, or season log types
         public int Id { get; set; }
         public string UserId { get; set; } = string.Empty;
         public int ShowId { get; set; }

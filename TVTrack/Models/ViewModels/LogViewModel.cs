@@ -2,6 +2,8 @@ namespace TVTrack.Models.ViewModels
 {
     public class LogViewModel
     {
+        // IMPORTANT VIEW MODEL
+        // used for intaking log entry data when user marks a show as watched
         public int TmdbId { get; set; }
         public LogType LogType { get; set; } = LogType.Series;
         public int? SeasonNumber { get; set; }

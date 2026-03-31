@@ -2,6 +2,8 @@ namespace TVTrack.Models.ViewModels
 {
     public class LogEntryViewModel
     {
+        // IMPORTANT VIEW MODEL
+        // used for showing the log entries of a show in the details page
         public int TmdbId { get; set; }
         public string Title { get; set; } = string.Empty;
         public string? PosterUrl { get; set; }

@@ -4,6 +4,7 @@ namespace TVTrack.Models.ViewModels
 {
     public class LoginViewModel
     {
+        // Quick view mode to take login credentials
         [Required]
         public string EmailOrUsername { get; set; } = string.Empty;
 

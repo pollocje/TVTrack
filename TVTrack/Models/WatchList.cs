@@ -2,6 +2,8 @@ namespace TVTrack.Models
 {
     public class WatchList
     {
+        // Class for WatchList Object, shows that users plan to watch
+        // Includes showID, userID, date added
         public int Id { get; set; }
         public string UserId { get; set; } = string.Empty;
         public int ShowId { get; set; }

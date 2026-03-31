@@ -2,6 +2,7 @@ namespace TVTrack.Models
 {
     public class Rating
     {
+        // Class for the rating object of a show, includes user, score, timestamp
         public int Id { get; set; }
         public string UserId { get; set; } = string.Empty;
         public int ShowId { get; set; }
