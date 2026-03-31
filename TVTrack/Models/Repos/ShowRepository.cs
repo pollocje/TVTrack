@@ -27,7 +27,8 @@ namespace TVTrack.Models.Repos
             return show;
         }
 
-        // ── Watchlist ──────────────────────────────────────
+        // Watchlist methods stay simple on purpose:
+        // one row per user/show pair, no duplicates.
 
         public async Task<bool> IsInWatchlistAsync(string userId, int showId)
         {
@@ -53,7 +54,8 @@ namespace TVTrack.Models.Repos
             }
         }
 
-        // ── Show Logs ──────────────────────────────────────
+        // Logs are used as the main activity/history feature.
+        // Ratings and reviews now live inside a single log entry.
 
         public async Task AddLogAsync(ShowLog log)
         {
@@ -88,7 +90,8 @@ namespace TVTrack.Models.Repos
                 .AverageAsync(l => (double)l.Rating!.Value);
         }
 
-        // ── Profile data ───────────────────────────────────
+        // Profile page pulls from a few different tables,
+        // so keep those queries grouped here.
 
         public async Task<List<TVShow>> GetUserWatchlistAsync(string userId)
         {
@@ -99,7 +102,7 @@ namespace TVTrack.Models.Repos
                 .ToListAsync();
         }
 
-        // ── Custom Lists ────────────────────────────────────
+        // Custom list helpers.
 
         public async Task<CustomList?> GetListByIdAsync(int listId)
         {
@@ -129,6 +132,7 @@ namespace TVTrack.Models.Repos
 
         public async Task AddShowToListAsync(int listId, string userId, int showId)
         {
+            // Only the owner of the list can change it.
             var list = await _db.CustomLists.FirstOrDefaultAsync(l => l.Id == listId && l.OwnerId == userId);
             if (list == null) return;
 
@@ -142,7 +146,7 @@ namespace TVTrack.Models.Repos
             }
         }
 
-        // ── Social / Follow ────────────────────────────────
+        // Social / follow helpers.
 
         public async Task<List<AppUser>> SearchUsersAsync(string query)
         {

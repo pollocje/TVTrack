@@ -27,6 +27,8 @@ namespace TVTrack.Services
             var json = await response.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<TmdbSearchResponse>(json);
 
+            // Convert TMDB's response shape into the simpler view model
+            // used by our MVC page and API controller.
             return new SearchViewModel
             {
                 Query = query,
@@ -81,6 +83,8 @@ namespace TVTrack.Services
             if (result == null)
                 return null;
 
+            // Season data is only pulled when needed so we do not
+            // store every episode in the local database.
             return new SeasonViewModel
             {
                 SeasonNumber = result.SeasonNumber,

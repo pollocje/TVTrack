@@ -9,6 +9,7 @@ namespace TVTrack.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+        // Main tables used by the app.
         public DbSet<TVShow> Shows { get; set; }
         public DbSet<ShowLog> ShowLogs { get; set; }
         public DbSet<Follow> Follows { get; set; }
@@ -26,6 +27,7 @@ namespace TVTrack.Data
     {
         public AppDbContext CreateDbContext(string[] args)
         {
+            // Needed so EF tools can create migrations from the command line.
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TVTrackDb;Trusted_Connection=True;MultipleActiveResultSets=true");
             return new AppDbContext(optionsBuilder.Options);

@@ -39,6 +39,8 @@ namespace TVTrack.Controllers
             if (viewModel == null)
                 return NotFound();
 
+            // TMDB gives us the live show info, then we layer on the
+            // community data we already saved locally (logs, watchlist, lists).
             var dbShow = await _showRepo.GetByTmdbIdAsync(id);
             if (dbShow != null)
             {
@@ -154,6 +156,8 @@ namespace TVTrack.Controllers
             var existing = await _showRepo.GetByTmdbIdAsync(tmdbId);
             if (existing != null) return existing;
 
+            // Only save the main fields we need often.
+            // Anything extra can still be pulled live from TMDB when needed.
             var details = await _tmdbService.GetShowDetailsAsync(tmdbId);
             if (details == null) return null;
 

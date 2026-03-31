@@ -6,7 +6,8 @@ using TVTrack.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// MVC views + JSON endpoints both get used in this project,
+// so keep the JSON naming consistent for the API responses.
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>
         options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase);
@@ -22,7 +23,14 @@ builder.Services.AddScoped<ShowRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Apply migrations on startup so a fresh clone can create/update the local DB
+// without manually opening SQL Server first.
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
