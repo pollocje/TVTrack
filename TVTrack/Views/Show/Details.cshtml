@@ -319,7 +319,7 @@
                 return;
             }
             try {
-                const res = await fetch(`/Show/Season/${logShowId}/${seasonNumber}`);
+                const res = await fetch(`/api/shows/${logShowId}/season/${seasonNumber}`);
                 if (!res.ok) throw new Error();
                 const data = await res.json();
                 logEpisodesCache[seasonNumber] = data.episodes || [];
@@ -428,7 +428,7 @@
                 episodeLoading.style.display = '';
 
                 try {
-                    const res = await fetch(`/Show/Season/${showId}/${seasonNumber}`);
+                    const res = await fetch(`/api/shows/${showId}/season/${seasonNumber}`);
                     if (!res.ok) throw new Error('Failed');
                     const data = await res.json();
                     episodes = data.episodes || [];
