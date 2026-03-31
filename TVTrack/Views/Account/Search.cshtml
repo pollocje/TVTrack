@@ -1,0 +1,50 @@
+@model TVTrack.Models.ViewModels.UserSearchViewModel
+@{
+    ViewData["Title"] = "Find Users";
+}
+
+<div class="section-card mb-4">
+    <h4 class="mb-3">Find Users</h4>
+    <form method="get" asp-action="Search" class="d-flex gap-2">
+        <input type="text" name="query" value="@Model.Query"
+               class="form-control form-control-dark" placeholder="Search by username..." />
+        <button type="submit" class="btn-watchlist-add">Search</button>
+    </form>
+</div>
+
+@if (!string.IsNullOrEmpty(Model.Query))
+{
+    <div class="section-card">
+        <h5 class="mb-3">
+            @if (Model.Results.Any())
+            {
+                <span>Results for "@Model.Query" (@Model.Results.Count)</span>
+            }
+            else
+            {
+                <span>No users found for "@Model.Query"</span>
+            }
+        </h5>
+
+        @if (Model.Results.Any())
+        {
+            <div class="d-flex flex-column gap-3">
+                @foreach (var user in Model.Results)
+                {
+                    <div class="d-flex align-items-center gap-3">
+                        @if (!string.IsNullOrEmpty(user.AvatarUrl))
+                        {
+                            <img src="@user.AvatarUrl" class="profile-avatar-sm" alt="@user.Username" />
+                        }
+                        else
+                        {
+                            <div class="profile-avatar-placeholder-sm">@user.Username[0].ToString().ToUpper()</div>
+                        }
+                        <a asp-action="ViewProfile" asp-route-username="@user.Username"
+                           class="log-title">@user.Username</a>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

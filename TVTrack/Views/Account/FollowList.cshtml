@@ -1,0 +1,48 @@
+@model TVTrack.Models.ViewModels.FollowListViewModel
+@{
+    ViewData["Title"] = $"{Model.Username}'s {Model.ListType}";
+}
+
+<div class="section-card">
+    <div class="d-flex align-items-center gap-3 mb-4">
+        <a asp-action="ViewProfile" asp-route-username="@Model.Username" class="text-muted small">
+            &larr; @Model.Username
+        </a>
+        <h4 class="mb-0">@Model.ListType (@Model.Users.Count)</h4>
+    </div>
+
+    @if (Model.Users.Any())
+    {
+        <div class="d-flex flex-column gap-3">
+            @foreach (var user in Model.Users)
+            {
+                <div class="d-flex align-items-center gap-3">
+                    @if (!string.IsNullOrEmpty(user.AvatarUrl))
+                    {
+                        <img src="@user.AvatarUrl" class="profile-avatar-sm" alt="@user.Username" />
+                    }
+                    else
+                    {
+                        <div class="profile-avatar-placeholder-sm">@user.Username[0].ToString().ToUpper()</div>
+                    }
+                    <a asp-action="ViewProfile" asp-route-username="@user.Username" class="log-title">
+                        @user.Username
+                    </a>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted mb-0">
+            @if (Model.ListType == "Followers")
+            {
+                <span>@Model.Username has no followers yet.</span>
+            }
+            else
+            {
+                <span>@Model.Username isn't following anyone yet.</span>
+            }
+        </p>
+    }
+</div>

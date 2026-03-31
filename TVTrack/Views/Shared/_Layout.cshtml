@@ -33,9 +33,14 @@
                         }
                     </ul>
 
-                    <form class="d-flex me-3" asp-controller="Show" asp-action="Search" method="get">
+                    <form class="d-flex me-2" asp-controller="Show" asp-action="Search" method="get">
                         <input class="nav-search-input" type="text" name="query" placeholder="Search shows..." />
-                        <button class="nav-search-btn" type="submit">&#128269;</button>
+                        <button class="nav-search-btn" type="submit">&#128249;</button>
+                    </form>
+
+                    <form class="d-flex me-3" asp-controller="Account" asp-action="Search" method="get">
+                        <input class="nav-search-input" type="text" name="query" placeholder="Find users..." />
+                        <button class="nav-search-btn" type="submit">&#128100;</button>
                     </form>
 
                     @if (User.Identity?.IsAuthenticated == true)

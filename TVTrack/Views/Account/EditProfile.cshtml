@@ -1,0 +1,46 @@
+@model TVTrack.Models.ViewModels.EditProfileViewModel
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<div class="section-card" style="max-width:540px;margin:0 auto">
+    <h4 class="mb-4">Edit Profile</h4>
+
+    <form asp-action="EditProfile" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+
+        <!-- Current avatar preview -->
+        <div class="mb-4 d-flex align-items-center gap-3">
+            @if (!string.IsNullOrEmpty(Model.CurrentAvatarUrl))
+            {
+                <img src="@Model.CurrentAvatarUrl" class="profile-avatar" alt="Current avatar" />
+            }
+            else
+            {
+                <div class="profile-avatar-placeholder">?</div>
+            }
+            <span class="text-muted small">Current profile picture</span>
+        </div>
+
+        <!-- Avatar upload -->
+        <div class="mb-3">
+            <label class="form-label text-light">Change Profile Picture</label>
+            <input type="file" name="Avatar" accept="image/*" class="form-control form-control-dark" />
+            <span asp-validation-for="Avatar" class="text-danger small"></span>
+            <div class="text-muted small mt-1">jpg, png, gif, or webp — replaces your current picture</div>
+        </div>
+
+        <!-- Bio -->
+        <div class="mb-4">
+            <label class="form-label text-light">Bio <span class="text-muted">(optional, max 300 chars)</span></label>
+            <textarea name="Bio" class="review-textarea" rows="3" maxlength="300"
+                      placeholder="Tell people a bit about yourself...">@Model.Bio</textarea>
+            <span asp-validation-for="Bio" class="text-danger small"></span>
+        </div>
+
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn-submit-review">Save Changes</button>
+            <a asp-action="Profile" class="btn btn-outline-secondary btn-sm align-self-center">Cancel</a>
+        </div>
+    </form>
+</div>

@@ -1,6 +1,8 @@
 @model TVTrack.Models.ViewModels.ProfileViewModel
 @{
     ViewData["Title"] = Model.Username + "'s Profile";
+    bool isOwnProfile = User.Identity?.IsAuthenticated == true
+        && User.Identity.Name == Model.Username;
 }
 
 <!-- ── Profile header ─────────────────────────────── -->
@@ -20,11 +22,37 @@
         {
             <p class="overview-text mb-2">@Model.Bio</p>
         }
-        <div class="d-flex gap-3">
+        <div class="d-flex gap-3 mb-2">
             <span class="meta-pill">@Model.Watchlist.Count watching</span>
             <span class="meta-pill">@Model.Lists.Count lists</span>
             <span class="meta-pill">@Model.RecentLogs.Count logged</span>
+            <a asp-action="Followers" asp-route-username="@Model.Username" class="meta-pill text-decoration-none">@Model.FollowersCount followers</a>
+            <a asp-action="Following" asp-route-username="@Model.Username" class="meta-pill text-decoration-none">@Model.FollowingCount following</a>
         </div>
+
+        @if (isOwnProfile)
+        {
+            <a asp-action="EditProfile" class="btn-list-add">&#9998; Edit Profile</a>
+        }
+        else if (User.Identity?.IsAuthenticated == true)
+        {
+            if (Model.IsFollowing)
+            {
+                <form asp-action="Unfollow" method="post" style="display:inline">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="username" value="@Model.Username" />
+                    <button type="submit" class="btn-watchlist-remove">&#10003; Following &mdash; Unfollow</button>
+                </form>
+            }
+            else
+            {
+                <form asp-action="Follow" method="post" style="display:inline">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="username" value="@Model.Username" />
+                    <button type="submit" class="btn-watchlist-add">+ Follow</button>
+                </form>
+            }
+        }
     </div>
 </div>
 
@@ -127,14 +155,17 @@
             @foreach (var list in Model.Lists)
             {
                 <div class="col-md-6 col-lg-4">
-                    <div class="list-card">
-                        <div class="list-card-name">@list.Name</div>
-                        @if (!string.IsNullOrEmpty(list.Description))
-                        {
-                            <div class="list-card-desc">@list.Description</div>
-                        }
-                        <div class="list-card-count">@list.ShowCount show@(list.ShowCount != 1 ? "s" : "")</div>
-                    </div>
+                    <a asp-controller="List" asp-action="Details" asp-route-id="@list.ListId"
+                       class="text-decoration-none">
+                        <div class="list-card">
+                            <div class="list-card-name">@list.Name</div>
+                            @if (!string.IsNullOrEmpty(list.Description))
+                            {
+                                <div class="list-card-desc">@list.Description</div>
+                            }
+                            <div class="list-card-count">@list.ShowCount show@(list.ShowCount != 1 ? "s" : "")</div>
+                        </div>
+                    </a>
                 </div>
             }
         </div>

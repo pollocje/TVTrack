@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TVTrack.Data;
 
@@ -6,10 +7,12 @@ namespace TVTrack.Models.Repos
     public class ShowRepository
     {
         private readonly AppDbContext _db;
+        private readonly UserManager<AppUser> _userManager;
 
-        public ShowRepository(AppDbContext db)
+        public ShowRepository(AppDbContext db, UserManager<AppUser> userManager)
         {
             _db = db;
+            _userManager = userManager;
         }
 
         public async Task<TVShow?> GetByTmdbIdAsync(int tmdbId)
@@ -91,11 +94,21 @@ namespace TVTrack.Models.Repos
         {
             return await _db.WatchList
                 .Where(w => w.UserId == userId)
+                .Include(w => w.Show)
                 .Select(w => w.Show)
                 .ToListAsync();
         }
 
         // ── Custom Lists ────────────────────────────────────
+
+        public async Task<CustomList?> GetListByIdAsync(int listId)
+        {
+            return await _db.CustomLists
+                .Include(l => l.Owner)
+                .Include(l => l.Items)
+                    .ThenInclude(i => i.Show)
+                .FirstOrDefaultAsync(l => l.Id == listId);
+        }
 
         public async Task<List<CustomList>> GetUserListsAsync(string userId)
         {
@@ -127,6 +140,77 @@ namespace TVTrack.Models.Repos
                 _db.CustomListItems.Add(new CustomListItem { CustomListId = listId, ShowId = showId });
                 await _db.SaveChangesAsync();
             }
+        }
+
+        // ── Social / Follow ────────────────────────────────
+
+        public async Task<List<AppUser>> SearchUsersAsync(string query)
+        {
+            return await _userManager.Users
+                .Where(u => u.UserName != null && u.UserName.Contains(query))
+                .OrderBy(u => u.UserName)
+                .Take(20)
+                .ToListAsync();
+        }
+
+        public async Task<bool> IsFollowingAsync(string followerId, string followedId)
+        {
+            return await _db.Follows.AnyAsync(f => f.FollowerId == followerId && f.FollowedId == followedId);
+        }
+
+        public async Task FollowAsync(string followerId, string followedId)
+        {
+            if (followerId == followedId) return;
+            if (await IsFollowingAsync(followerId, followedId)) return;
+
+            _db.Follows.Add(new Follow { FollowerId = followerId, FollowedId = followedId });
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task UnfollowAsync(string followerId, string followedId)
+        {
+            var follow = await _db.Follows.FirstOrDefaultAsync(f => f.FollowerId == followerId && f.FollowedId == followedId);
+            if (follow != null)
+            {
+                _db.Follows.Remove(follow);
+                await _db.SaveChangesAsync();
+            }
+        }
+
+        public async Task<int> GetFollowersCountAsync(string userId)
+        {
+            return await _db.Follows.CountAsync(f => f.FollowedId == userId);
+        }
+
+        public async Task<int> GetFollowingCountAsync(string userId)
+        {
+            return await _db.Follows.CountAsync(f => f.FollowerId == userId);
+        }
+
+        public async Task<List<AppUser>> GetFollowersAsync(string userId)
+        {
+            var followerIds = await _db.Follows
+                .Where(f => f.FollowedId == userId)
+                .Select(f => f.FollowerId)
+                .ToListAsync();
+
+            return await _userManager.Users
+                .Where(u => followerIds.Contains(u.Id))
+                .OrderBy(u => u.UserName)
+                .ToListAsync();
+        }
+
+        public async Task<List<AppUser>> GetFollowingAsync(string userId)
+        {
+            var followedIds = await _db.Follows
+                .Where(f => f.FollowerId == userId)
+                .Select(f => f.FollowedId)
+                .ToListAsync();
+
+            return await _userManager.Users
+                .Where(u => followedIds.Contains(u.Id))
+                .OrderBy(u => u.UserName)
+                .ToListAsync();
         }
     }
 }
