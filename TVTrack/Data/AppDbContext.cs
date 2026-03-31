@@ -10,8 +10,7 @@ namespace TVTrack.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<TVShow> Shows { get; set; }
-        public DbSet<Review> Reviews { get; set; }
-        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<ShowLog> ShowLogs { get; set; }
         public DbSet<Follow> Follows { get; set; }
         public DbSet<WatchList> WatchList { get; set; }
         public DbSet<CustomList> CustomLists { get; set; }

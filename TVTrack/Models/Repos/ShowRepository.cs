@@ -50,51 +50,39 @@ namespace TVTrack.Models.Repos
             }
         }
 
-        // ── Ratings ────────────────────────────────────────
+        // ── Show Logs ──────────────────────────────────────
 
-        public async Task<int?> GetUserRatingAsync(string userId, int showId)
+        public async Task AddLogAsync(ShowLog log)
         {
-            var rating = await _db.Ratings.FirstOrDefaultAsync(r => r.UserId == userId && r.ShowId == showId);
-            return rating?.Score;
+            _db.ShowLogs.Add(log);
+            await _db.SaveChangesAsync();
         }
 
-        public async Task SetRatingAsync(string userId, int showId, int score)
+        public async Task<List<ShowLog>> GetShowLogsAsync(int showId)
         {
-            var existing = await _db.Ratings.FirstOrDefaultAsync(r => r.UserId == userId && r.ShowId == showId);
-            if (existing != null)
-            {
-                existing.Score = score;
-                existing.RatedAt = DateTime.UtcNow;
-            }
-            else
-            {
-                _db.Ratings.Add(new Rating { UserId = userId, ShowId = showId, Score = score });
-            }
-            await _db.SaveChangesAsync();
+            return await _db.ShowLogs
+                .Include(l => l.User)
+                .Where(l => l.ShowId == showId)
+                .OrderByDescending(l => l.WatchedOn)
+                .ToListAsync();
+        }
+
+        public async Task<List<ShowLog>> GetUserLogsAsync(string userId)
+        {
+            return await _db.ShowLogs
+                .Where(l => l.UserId == userId)
+                .Include(l => l.Show)
+                .OrderByDescending(l => l.WatchedOn)
+                .ToListAsync();
         }
 
         public async Task<double?> GetAvgRatingAsync(int showId)
         {
-            var hasRatings = await _db.Ratings.AnyAsync(r => r.ShowId == showId);
+            var hasRatings = await _db.ShowLogs.AnyAsync(l => l.ShowId == showId && l.Rating != null);
             if (!hasRatings) return null;
-            return await _db.Ratings.Where(r => r.ShowId == showId).AverageAsync(r => (double)r.Score);
-        }
-
-        // ── Reviews ────────────────────────────────────────
-
-        public async Task<List<Review>> GetReviewsAsync(int showId)
-        {
-            return await _db.Reviews
-                .Include(r => r.User)
-                .Where(r => r.ShowId == showId)
-                .OrderByDescending(r => r.CreatedAt)
-                .ToListAsync();
-        }
-
-        public async Task AddReviewAsync(string userId, int showId, string comment)
-        {
-            _db.Reviews.Add(new Review { UserId = userId, ShowId = showId, Comment = comment });
-            await _db.SaveChangesAsync();
+            return await _db.ShowLogs
+                .Where(l => l.ShowId == showId && l.Rating != null)
+                .AverageAsync(l => (double)l.Rating!.Value);
         }
 
         // ── Profile data ───────────────────────────────────
@@ -105,17 +93,6 @@ namespace TVTrack.Models.Repos
                 .Where(w => w.UserId == userId)
                 .Select(w => w.Show)
                 .ToListAsync();
-        }
-
-        public async Task<List<(TVShow Show, int Score)>> GetUserRatingsAsync(string userId)
-        {
-            var ratings = await _db.Ratings
-                .Where(r => r.UserId == userId)
-                .Include(r => r.Show)
-                .OrderByDescending(r => r.RatedAt)
-                .ToListAsync();
-
-            return ratings.Select(r => (r.Show, r.Score)).ToList();
         }
 
         // ── Custom Lists ────────────────────────────────────
@@ -139,7 +116,6 @@ namespace TVTrack.Models.Repos
 
         public async Task AddShowToListAsync(int listId, string userId, int showId)
         {
-            // Verify ownership
             var list = await _db.CustomLists.FirstOrDefaultAsync(l => l.Id == listId && l.OwnerId == userId);
             if (list == null) return;
 

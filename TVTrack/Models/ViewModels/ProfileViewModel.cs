@@ -12,7 +12,7 @@ namespace TVTrack.Models.ViewModels
 
         public List<ShowCardViewModel> Watchlist { get; set; } = new();
         public List<ListSummaryViewModel> Lists { get; set; } = new();
-        public List<RatedShowViewModel> Ratings { get; set; } = new();
+        public List<LogEntryViewModel> RecentLogs { get; set; } = new();
     }
 
     public class RatedShowViewModel

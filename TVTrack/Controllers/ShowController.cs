@@ -44,20 +44,23 @@ namespace TVTrack.Controllers
             {
                 viewModel.AvgRating = await _showRepo.GetAvgRatingAsync(dbShow.Id);
 
-                var reviews = await _showRepo.GetReviewsAsync(dbShow.Id);
-                viewModel.Reviews = reviews.Select(r => new ReviewItemViewModel
+                var logs = await _showRepo.GetShowLogsAsync(dbShow.Id);
+                viewModel.RecentLogs = logs.Select(l => new ShowLogItemViewModel
                 {
-                    ShowTitle = viewModel.Title,
-                    Rating = 0,
-                    Comment = r.Comment,
-                    PostedBy = r.User.UserName ?? "Unknown"
+                    Username = l.User.UserName ?? "Unknown",
+                    LogType = l.LogType,
+                    SeasonNumber = l.SeasonNumber,
+                    EpisodeNumber = l.EpisodeNumber,
+                    EpisodeTitle = l.EpisodeTitle,
+                    Rating = l.Rating,
+                    Review = l.Review,
+                    WatchedOn = l.WatchedOn
                 }).ToList();
 
                 if (User.Identity?.IsAuthenticated == true)
                 {
                     var userId = _userManager.GetUserId(User)!;
                     viewModel.IsInWatchlist = await _showRepo.IsInWatchlistAsync(userId, dbShow.Id);
-                    viewModel.UserRating = await _showRepo.GetUserRatingAsync(userId, dbShow.Id);
                     var lists = await _showRepo.GetUserListsAsync(userId);
                     viewModel.UserLists = lists.Select(l => new CustomListSummary { Id = l.Id, Name = l.Name }).ToList();
                 }
@@ -78,8 +81,7 @@ namespace TVTrack.Controllers
         }
 
         // POST /Show/AddToWatchlist
-        [HttpPost]
-        [Authorize]
+        [HttpPost, Authorize]
         public async Task<IActionResult> AddToWatchlist(int tmdbId)
         {
             var show = await EnsureShowInDbAsync(tmdbId);
@@ -91,8 +93,7 @@ namespace TVTrack.Controllers
         }
 
         // POST /Show/RemoveFromWatchlist
-        [HttpPost]
-        [Authorize]
+        [HttpPost, Authorize]
         public async Task<IActionResult> RemoveFromWatchlist(int tmdbId)
         {
             var show = await _showRepo.GetByTmdbIdAsync(tmdbId);
@@ -104,41 +105,34 @@ namespace TVTrack.Controllers
             return RedirectToAction(nameof(Details), new { id = tmdbId });
         }
 
-        // POST /Show/Rate
-        [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> Rate(int tmdbId, int score)
+        // POST /Show/Log
+        [HttpPost, Authorize]
+        public async Task<IActionResult> Log(LogViewModel model)
         {
-            if (score < 1 || score > 5)
-                return BadRequest();
-
-            var show = await EnsureShowInDbAsync(tmdbId);
+            var show = await EnsureShowInDbAsync(model.TmdbId);
             if (show == null) return NotFound();
 
             var userId = _userManager.GetUserId(User)!;
-            await _showRepo.SetRatingAsync(userId, show.Id, score);
-            return RedirectToAction(nameof(Details), new { id = tmdbId });
-        }
 
-        // POST /Show/Review
-        [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> Review(int tmdbId, string comment)
-        {
-            if (string.IsNullOrWhiteSpace(comment))
-                return RedirectToAction(nameof(Details), new { id = tmdbId });
+            var log = new ShowLog
+            {
+                UserId = userId,
+                ShowId = show.Id,
+                LogType = model.LogType,
+                SeasonNumber = model.LogType != LogType.Series ? model.SeasonNumber : null,
+                EpisodeNumber = model.LogType == LogType.Episode ? model.EpisodeNumber : null,
+                EpisodeTitle = model.LogType == LogType.Episode ? model.EpisodeTitle : null,
+                Rating = model.Rating is >= 1 and <= 5 ? model.Rating : null,
+                Review = string.IsNullOrWhiteSpace(model.Review) ? null : model.Review.Trim(),
+                WatchedOn = model.WatchedOn == default ? DateTime.UtcNow : model.WatchedOn.ToUniversalTime()
+            };
 
-            var show = await EnsureShowInDbAsync(tmdbId);
-            if (show == null) return NotFound();
-
-            var userId = _userManager.GetUserId(User)!;
-            await _showRepo.AddReviewAsync(userId, show.Id, comment);
-            return RedirectToAction(nameof(Details), new { id = tmdbId });
+            await _showRepo.AddLogAsync(log);
+            return RedirectToAction(nameof(Details), new { id = model.TmdbId });
         }
 
         // POST /Show/AddToList
-        [HttpPost]
-        [Authorize]
+        [HttpPost, Authorize]
         public async Task<IActionResult> AddToList(int tmdbId, int listId)
         {
             var show = await EnsureShowInDbAsync(tmdbId);
@@ -150,8 +144,7 @@ namespace TVTrack.Controllers
         }
 
         // POST /Show/CreateList
-        [HttpPost]
-        [Authorize]
+        [HttpPost, Authorize]
         public async Task<IActionResult> CreateList(int tmdbId, string listName)
         {
             if (string.IsNullOrWhiteSpace(listName))
@@ -167,7 +160,6 @@ namespace TVTrack.Controllers
             return RedirectToAction(nameof(Details), new { id = tmdbId });
         }
 
-        // Fetches show from TMDB and inserts into DB if it doesn't exist yet
         private async Task<TVShow?> EnsureShowInDbAsync(int tmdbId)
         {
             var existing = await _showRepo.GetByTmdbIdAsync(tmdbId);

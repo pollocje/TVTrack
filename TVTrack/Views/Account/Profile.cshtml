@@ -23,9 +23,63 @@
         <div class="d-flex gap-3">
             <span class="meta-pill">@Model.Watchlist.Count watching</span>
             <span class="meta-pill">@Model.Lists.Count lists</span>
-            <span class="meta-pill">@Model.Ratings.Count rated</span>
+            <span class="meta-pill">@Model.RecentLogs.Count logged</span>
         </div>
     </div>
+</div>
+
+<!-- ── Recent Logs ────────────────────────────────── -->
+<div class="section-card mb-4">
+    <h5>Recent Activity (@Model.RecentLogs.Count)</h5>
+
+    @if (Model.RecentLogs.Any())
+    {
+        <div class="log-list mt-2">
+            @foreach (var log in Model.RecentLogs)
+            {
+                <div class="log-entry d-flex gap-3 align-items-start">
+                    @if (log.PosterUrl != null)
+                    {
+                        <a asp-controller="Show" asp-action="Details" asp-route-id="@log.TmdbId">
+                            <img src="@log.PosterUrl" class="log-poster" alt="@log.Title" />
+                        </a>
+                    }
+                    else
+                    {
+                        <div class="log-poster-placeholder">No Image</div>
+                    }
+                    <div class="log-body flex-grow-1">
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <a asp-controller="Show" asp-action="Details" asp-route-id="@log.TmdbId"
+                               class="log-title">@log.Title</a>
+                            <span class="meta-pill">@log.LogLabel</span>
+                        </div>
+
+                        @if (log.Rating.HasValue)
+                        {
+                            <div class="log-stars mt-1">
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <span class="@(i <= log.Rating ? "star-filled" : "star-empty")">&#9733;</span>
+                                }
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(log.ReviewText))
+                        {
+                            <p class="log-review mt-1 mb-0">@log.ReviewText</p>
+                        }
+
+                        <div class="log-date text-muted small mt-1">@log.LoggedAt.ToString("MMM d, yyyy")</div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted mt-2 mb-0">No activity yet. Log a show from its details page.</p>
+    }
 </div>
 
 <!-- ── Watchlist ──────────────────────────────────── -->
@@ -91,36 +145,46 @@
     }
 </div>
 
-<!-- ── Ratings ────────────────────────────────────── -->
+<!-- ── Reviews ─────────────────────────────────────── -->
+@{
+    var reviews = Model.RecentLogs.Where(l => !string.IsNullOrEmpty(l.ReviewText)).ToList();
+}
 <div class="section-card mb-4">
-    <h5>Ratings (@Model.Ratings.Count)</h5>
+    <h5>Reviews (@reviews.Count)</h5>
 
-    @if (Model.Ratings.Any())
+    @if (reviews.Any())
     {
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 mt-1">
-            @foreach (var rated in Model.Ratings)
+        <div class="log-list mt-2">
+            @foreach (var log in reviews)
             {
-                <div class="col">
-                    <div class="show-card h-100">
-                        @if (rated.PosterUrl != null)
+                <div class="log-entry d-flex gap-3 align-items-start">
+                    @if (log.PosterUrl != null)
+                    {
+                        <a asp-controller="Show" asp-action="Details" asp-route-id="@log.TmdbId">
+                            <img src="@log.PosterUrl" class="log-poster" alt="@log.Title" />
+                        </a>
+                    }
+                    else
+                    {
+                        <div class="log-poster-placeholder">No Image</div>
+                    }
+                    <div class="log-body flex-grow-1">
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <a asp-controller="Show" asp-action="Details" asp-route-id="@log.TmdbId"
+                               class="log-title">@log.Title</a>
+                            <span class="meta-pill">@log.LogLabel</span>
+                        </div>
+                        @if (log.Rating.HasValue)
                         {
-                            <img src="@rated.PosterUrl" class="show-card-poster" alt="@rated.Title" />
-                        }
-                        else
-                        {
-                            <div class="show-card-poster-placeholder">No Image</div>
-                        }
-                        <div class="show-card-body">
-                            <div class="show-card-title">@rated.Title</div>
-                            <div class="rated-score">
+                            <div class="log-stars mt-1">
                                 @for (int i = 1; i <= 5; i++)
                                 {
-                                    <span class="@(i <= rated.Score ? "star-filled" : "star-empty")">&#9733;</span>
+                                    <span class="@(i <= log.Rating ? "star-filled" : "star-empty")">&#9733;</span>
                                 }
                             </div>
-                            <a asp-controller="Show" asp-action="Details" asp-route-id="@rated.TmdbId"
-                               class="show-card-link mt-2">View</a>
-                        </div>
+                        }
+                        <p class="log-review mt-1 mb-0">@log.ReviewText</p>
+                        <div class="log-date text-muted small mt-1">@log.LoggedAt.ToString("MMM d, yyyy")</div>
                     </div>
                 </div>
             }
@@ -128,6 +192,6 @@
     }
     else
     {
-        <p class="text-muted mt-2 mb-0">No shows rated yet.</p>
+        <p class="text-muted mt-2 mb-0">No reviews written yet.</p>
     }
 </div>

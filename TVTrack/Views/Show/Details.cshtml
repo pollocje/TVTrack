@@ -54,7 +54,7 @@
             <p class="overview-text">@Model.Overview</p>
         }
 
-        <!-- Watchlist + List actions -->
+        <!-- Watchlist + Log + List actions -->
         @if (isAuth)
         {
             <div class="mt-3 d-flex flex-wrap gap-2 align-items-center">
@@ -73,9 +73,93 @@
                     </form>
                 }
 
+                <button type="button" class="btn-log-add" data-bs-toggle="modal" data-bs-target="#logModal">
+                    &#9998; Log
+                </button>
+
                 <button type="button" class="btn-list-add" data-bs-toggle="modal" data-bs-target="#addToListModal">
                     &#9776; Add to List
                 </button>
+            </div>
+        }
+
+        <!-- Log Modal -->
+        @if (isAuth)
+        {
+            <div class="modal fade" id="logModal" tabindex="-1" aria-labelledby="logModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content modal-dark">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="logModalLabel">Log @Model.Title</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form asp-action="Log" method="post">
+                                <input type="hidden" name="TmdbId" value="@Model.TmdbId" />
+
+                                <!-- Log type -->
+                                <div class="mb-3">
+                                    <label class="form-label text-light">What did you watch?</label>
+                                    <div class="d-flex gap-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="LogType" value="0" id="logTypeSeries" checked />
+                                            <label class="form-check-label text-light" for="logTypeSeries">Series</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="LogType" value="1" id="logTypeSeason" />
+                                            <label class="form-check-label text-light" for="logTypeSeason">Season</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="LogType" value="2" id="logTypeEpisode" />
+                                            <label class="form-check-label text-light" for="logTypeEpisode">Episode</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Season number (Season + Episode) -->
+                                <div class="mb-3 d-none" id="seasonField">
+                                    <label class="form-label text-light">Season Number</label>
+                                    <input type="number" name="SeasonNumber" class="form-control form-control-dark" min="1" />
+                                </div>
+
+                                <!-- Episode fields -->
+                                <div class="mb-3 d-none" id="episodeFields">
+                                    <label class="form-label text-light">Episode Number</label>
+                                    <input type="number" name="EpisodeNumber" class="form-control form-control-dark mb-2" min="1" />
+                                    <label class="form-label text-light">Episode Title <span class="text-muted">(optional)</span></label>
+                                    <input type="text" name="EpisodeTitle" class="form-control form-control-dark" maxlength="200" />
+                                </div>
+
+                                <!-- Rating -->
+                                <div class="mb-3">
+                                    <label class="form-label text-light">Rating <span class="text-muted">(optional)</span></label>
+                                    <div class="log-star-rating" id="logStarRating">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            <button type="button" class="log-star-btn" data-value="@i">&#9733;</button>
+                                        }
+                                    </div>
+                                    <input type="hidden" name="Rating" id="logRatingInput" value="" />
+                                </div>
+
+                                <!-- Review -->
+                                <div class="mb-3">
+                                    <label class="form-label text-light">Review <span class="text-muted">(optional)</span></label>
+                                    <textarea name="Review" class="review-textarea" rows="3" placeholder="What did you think?"></textarea>
+                                </div>
+
+                                <!-- Date -->
+                                <div class="mb-4">
+                                    <label class="form-label text-light">Watch Date</label>
+                                    <input type="date" name="WatchedOn" class="form-control form-control-dark"
+                                           value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                                </div>
+
+                                <button type="submit" class="btn-submit-review w-100">Save Log</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         }
 
@@ -160,98 +244,80 @@
     </div>
 }
 
-<!-- ── Actions: Rate + Review ──────────────────────── -->
-@if (isAuth)
-{
-    <div class="row g-3 mb-4">
-
-        <!-- Rate -->
-        <div class="col-md-6">
-            <div class="section-card">
-                <h5>Your Rating</h5>
-                <form asp-action="Rate" method="post" id="rateForm">
-                    <input type="hidden" name="tmdbId" value="@Model.TmdbId" />
-                    <div class="star-rating" id="starRating" data-current="@(Model.UserRating ?? 0)">
-                        @for (int i = 1; i <= 5; i++)
-                        {
-                            <button type="submit" name="score" value="@i"
-                                    class="star-btn @(Model.UserRating >= i ? "active" : "")"
-                                    data-value="@i">&#9733;</button>
-                        }
-                    </div>
-                    @if (Model.UserRating != null)
-                    {
-                        <p style="color:var(--tv-muted); font-size:0.8rem; margin-top:0.5rem;">
-                            Your rating: @Model.UserRating / 5 &mdash; click a star to update
-                        </p>
-                    }
-                    else
-                    {
-                        <p style="color:var(--tv-muted); font-size:0.8rem; margin-top:0.5rem;">
-                            Click a star to rate
-                        </p>
-                    }
-                </form>
-            </div>
-        </div>
-
-        <!-- Review -->
-        <div class="col-md-6">
-            <div class="section-card">
-                <h5>Write a Review</h5>
-                <form asp-action="Review" method="post">
-                    <input type="hidden" name="tmdbId" value="@Model.TmdbId" />
-                    <textarea name="comment" class="review-textarea" rows="3"
-                              placeholder="Share your thoughts on this show..."></textarea>
-                    <button type="submit" class="btn-submit-review">Post Review</button>
-                </form>
-            </div>
-        </div>
-    </div>
-}
-else
+@if (!isAuth)
 {
     <div class="section-card mb-4">
         <p class="auth-prompt mb-0">
-            <a href="/Identity/Account/Login">Log in</a> to add this show to your watchlist, rate it, or write a review.
+            <a asp-controller="Account" asp-action="Login">Log in</a> to add this show to your watchlist or log it.
         </p>
     </div>
 }
 
-<!-- ── Reviews list ─────────────────────────────────── -->
-@if (Model.Reviews.Any())
+<!-- ── Recent Logs ───────────────────────────────────── -->
+@if (Model.RecentLogs.Any())
 {
     <div class="section-card">
-        <h5>Reviews (@Model.Reviews.Count)</h5>
-        @foreach (var review in Model.Reviews)
-        {
-            <div class="review-card">
-                <p class="review-text">@review.Comment</p>
-                <span class="review-author">&#8212; @review.PostedBy</span>
-            </div>
-        }
+        <h5>Recent Logs (@Model.RecentLogs.Count)</h5>
+        <div class="log-list mt-2">
+            @foreach (var log in Model.RecentLogs)
+            {
+                <div class="log-entry d-flex gap-3 align-items-start">
+                    <div class="log-body flex-grow-1">
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <span class="log-title">@log.Username</span>
+                            <span class="meta-pill">@log.LogLabel</span>
+                            @if (log.Rating.HasValue)
+                            {
+                                <span class="log-stars">
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        <span class="@(i <= log.Rating ? "star-filled" : "star-empty")">&#9733;</span>
+                                    }
+                                </span>
+                            }
+                            <span class="log-date text-muted small">@log.WatchedOn.ToString("MMM d, yyyy")</span>
+                        </div>
+                        @if (!string.IsNullOrEmpty(log.Review))
+                        {
+                            <p class="log-review mt-1 mb-0">@log.Review</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 }
 
 @section Scripts {
     <script>
-        // Star hover effect
-        const stars = document.querySelectorAll('.star-btn');
-        const current = parseInt(document.getElementById('starRating')?.dataset.current ?? '0');
-
-        stars.forEach(star => {
-            star.addEventListener('mouseenter', () => {
-                const val = parseInt(star.dataset.value);
-                stars.forEach(s => {
-                    s.classList.toggle('active', parseInt(s.dataset.value) <= val);
-                });
+        // Log modal: show/hide season/episode fields based on log type
+        document.querySelectorAll('input[name="LogType"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const val = parseInt(radio.value);
+                document.getElementById('seasonField').classList.toggle('d-none', val === 0);
+                document.getElementById('episodeFields').classList.toggle('d-none', val !== 2);
             });
         });
 
-        document.getElementById('starRating')?.addEventListener('mouseleave', () => {
-            stars.forEach(s => {
-                s.classList.toggle('active', parseInt(s.dataset.value) <= current);
+        // Log modal: star rating
+        const logStars = document.querySelectorAll('.log-star-btn');
+        const logRatingInput = document.getElementById('logRatingInput');
+        let selectedRating = 0;
+
+        logStars.forEach(star => {
+            star.addEventListener('mouseenter', () => {
+                const val = parseInt(star.dataset.value);
+                logStars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= val));
             });
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.value);
+                logRatingInput.value = selectedRating;
+                logStars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= selectedRating));
+            });
+        });
+
+        document.getElementById('logStarRating')?.addEventListener('mouseleave', () => {
+            logStars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= selectedRating));
         });
 
         // Season / episode browser
