@@ -122,9 +122,16 @@ namespace TVTrack.Models.Repos
                 .ToListAsync();
         }
 
+        // Creates a new custom list for the user and generates a unique share token so
+        // the list can be shared publicly via a URL without exposing the numeric ID.
         public async Task<CustomList> CreateListAsync(string userId, string name)
         {
-            var list = new CustomList { OwnerId = userId, Name = name };
+            var list = new CustomList
+            {
+                OwnerId = userId,
+                Name = name,
+                ShareToken = Guid.NewGuid().ToString("N")
+            };
             _db.CustomLists.Add(list);
             await _db.SaveChangesAsync();
             return list;
@@ -144,6 +151,48 @@ namespace TVTrack.Models.Repos
                 _db.CustomListItems.Add(new CustomListItem { CustomListId = listId, ShowId = showId });
                 await _db.SaveChangesAsync();
             }
+        }
+
+        // Removes a single show from a custom list. Checks that the requesting user
+        // owns the list before making any changes so other users can't modify it.
+        public async Task RemoveShowFromListAsync(int listId, string userId, int showId)
+        {
+            // Verify ownership before allowing removal.
+            var list = await _db.CustomLists.FirstOrDefaultAsync(l => l.Id == listId && l.OwnerId == userId);
+            if (list == null) return;
+
+            var item = await _db.CustomListItems
+                .FirstOrDefaultAsync(i => i.CustomListId == listId && i.ShowId == showId);
+            if (item != null)
+            {
+                _db.CustomListItems.Remove(item);
+                await _db.SaveChangesAsync();
+            }
+        }
+
+        // Deletes an entire custom list including all its show entries. Ownership is
+        // checked first so a user can only delete their own lists.
+        public async Task DeleteListAsync(int listId, string userId)
+        {
+            var list = await _db.CustomLists
+                .Include(l => l.Items)
+                .FirstOrDefaultAsync(l => l.Id == listId && l.OwnerId == userId);
+            if (list == null) return;
+
+            _db.CustomListItems.RemoveRange(list.Items);
+            _db.CustomLists.Remove(list);
+            await _db.SaveChangesAsync();
+        }
+
+        // Looks up a list by its share token instead of its ID. This is used for the
+        // public share link so anyone with the token can view the list.
+        public async Task<CustomList?> GetListByShareTokenAsync(string token)
+        {
+            return await _db.CustomLists
+                .Include(l => l.Owner)
+                .Include(l => l.Items)
+                    .ThenInclude(i => i.Show)
+                .FirstOrDefaultAsync(l => l.ShareToken == token);
         }
 
         // Social / follow helpers.

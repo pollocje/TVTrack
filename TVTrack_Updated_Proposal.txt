@@ -1,0 +1,326 @@
+================================================================================
+C# Advanced .NET Server-Side Technologies
+FINAL PROJECT REPORT / UPDATED PROPOSAL
+TVTrack - Group 8
+Date: April 4, 2026
+================================================================================
+
+1. TITLE PAGE
+--------------------------------------------------------------------------------
+Project Name  : TVTrack
+Team          : Group 8
+Team Members  :
+  - Austin Nicholson
+  - Jeffrey Pollock
+  - Muhammed Cengiz
+  - Sebastion Da Silva
+
+
+================================================================================
+2. PROJECT OVERVIEW
+--------------------------------------------------------------------------------
+
+TVTrack is a web-based TV show tracking platform inspired by Letterboxd. Users
+can search for TV shows using the TMDB API, log watched episodes/seasons/series,
+rate and review shows, add them to a watchlist, create custom lists, and interact
+socially by following other users and viewing their profiles.
+
+--- TECHNOLOGY: Proposed vs Actual ---
+
+  Proposed                    | Actual / Changes
+  ----------------------------|--------------------------------------------------
+  Visual Studio 2022          | Visual Studio 2022                   [NO CHANGE]
+  ASP.NET Core MVC (.NET 8)   | ASP.NET Core MVC (.NET 10)           [UPGRADED]
+  SQL Server 2022             | SQL Server / LocalDB (mssqllocaldb)  [NO CHANGE]
+  Entity Framework Core       | EF Core (via IdentityDbContext)      [NO CHANGE]
+  TMDB REST API               | TMDB REST API                        [NO CHANGE]
+  (not in proposal)           | ASP.NET Core Identity (AppUser)      [ADDED]
+  (not in proposal)           | Web API controller (ShowApiController)[ADDED]
+  (not in proposal)           | NUnit testing framework              [ADDED - req]
+
+The application follows a layered architecture separating presentation logic
+(Controllers + Views + ViewModels), service logic (TmdbService, Repositories),
+and data access (EF Core / AppDbContext / SQL Server).
+
+
+================================================================================
+3. SOFTWARE MODEL
+--------------------------------------------------------------------------------
+
+--- USE-CASE SUMMARY: Proposed vs Actual ---
+
+3.1 SEARCH (Muhammed Cengiz)
+  Proposed use cases:
+    - Search TV Show (query TMDB API, display results, view show details)
+  Implemented:
+    [x] GET /Show/Search?query=...&page=  - searches TMDB, paginates results
+    [x] GET /Show/Details/{id}           - view full show details page
+    [x] GET /api/shows/search            - Web API JSON endpoint (bonus)
+    [x] GET /api/shows/{id}              - Web API JSON endpoint (bonus)
+    [x] GET /api/shows/{id}/season/{s}   - Season/episode detail endpoint (bonus)
+  Notes:
+    - The search use case is fully implemented as proposed.
+    - Web API endpoints were NOT in the original proposal but were added to
+      satisfy the project requirement of having a Web API for web services.
+
+3.2 ADD SHOW TO ACCOUNT (Jeffrey Pollock)
+  Proposed use cases:
+    - Add TV Show (rate, review, add to list, add to watchlist)
+  Implemented:
+    [x] POST /Show/AddToWatchlist        - add show to user watchlist
+    [x] POST /Show/RemoveFromWatchlist   - remove show from watchlist
+    [x] POST /Show/Log                   - log a watched series/season/episode
+                                           (with optional rating 1-5 + review text)
+    [x] POST /Show/AddToList             - add show to existing custom list
+    [x] POST /Show/CreateList            - create a new list and add show to it
+  Notes:
+    - "Rate Show" and "Review Show" were originally proposed as separate popup
+      flows. In the actual implementation, rating and review text are combined
+      into a single "Log" entry (ShowLog model), which is more natural and
+      covers both use cases together.
+    - The Add Show popup was replaced with inline actions directly on the
+      show Details page, reducing round-trips.
+
+3.3 LISTS (Sebastion Da Silva)
+  Proposed use cases:
+    - Create list, Delete list, Add show to list, Delete show from list,
+      View specific watchlist, Search and display current lists,
+      Generate share list link
+  Implemented:
+    [x] Create list  - via POST /Show/CreateList (from show detail page)
+    [x] Add show to list  - via POST /Show/AddToList
+    [x] View specific list  - via GET /List/Details/{id}
+    [x] Lists shown on profile - user's lists visible on profile page
+    [ ] Delete list          - NOT YET IMPLEMENTED
+    [ ] Delete show from list- NOT YET IMPLEMENTED
+    [ ] Search and display current lists - NOT YET IMPLEMENTED (lists visible
+                                           on profile, no dedicated search)
+    [ ] Generate share list link - NOT YET IMPLEMENTED (ShareToken field exists
+                                   in CustomList model but not wired up)
+  Notes:
+    - The CustomList model does include a ShareToken field (string?) in the
+      database, indicating this was planned but not yet completed.
+    - List creation and adding shows is functional. Delete/search/share are
+      the remaining items for this use case area.
+
+3.4 SOCIAL INTERACTION (Austin Nicholson)
+  Proposed use cases:
+    - View own profile, View followers/following, View other profile,
+      Follow user, Unfollow user, Edit profile, Change profile picture
+  Implemented:
+    [x] View own profile (GET /Account/Profile)
+    [x] View other user profile (GET /Account/ViewProfile/{username})
+    [x] Follow user (POST /Account/Follow)
+    [x] Unfollow user (POST /Account/Unfollow)
+    [x] View followers list (GET /Account/Followers/{username})
+    [x] View following list (GET /Account/Following/{username})
+    [x] Edit profile / bio (GET+POST /Account/EditProfile)
+    [x] Change profile picture (handled within EditProfile - file upload)
+    [x] User search (GET /Account/Search?query=)  [BONUS - not in proposal]
+  Notes:
+    - All proposed Social Interaction use cases have been implemented.
+    - User search was added beyond the proposal scope.
+
+--- ARCHITECTURE: Proposed vs Actual ---
+
+  Proposed layers:
+    Presentation Layer  (Views, Controllers, ViewModels)
+    Services Layer      (App Services, Interfaces, TMDB Client)
+    Business Layer      (Domain Models, Business Rules)
+    Data Layer          (Repositories, EF Core / DB)
+
+  Actual layers implemented:
+    Presentation Layer:
+      Controllers/AccountController.cs     (Jeff)
+      Controllers/ShowController.cs        (Jeff)
+      Controllers/ShowApiController.cs     (Jeff) [Web API - added]
+      Controllers/ListController.cs        (Jeff)
+      Controllers/HomeController.cs
+      Views/Account/ (Login, Register, Profile, EditProfile,
+                      Search, FollowList)
+      Views/Show/ (Search, Details)
+      Views/List/ (Details)
+      Views/Home/ (Index)
+      Models/ViewModels/ (SearchViewModel, ShowViewModel, ProfileViewModel,
+                          ListDetailViewModel, LogViewModel, etc.)
+
+    Services Layer:
+      Services/ITmdbService.cs             (Sebastion)
+      Services/TmdbService.cs              (Sebastion)
+
+    Data/Domain Layer:
+      Models/TVShow.cs                     (Muhammed)
+      Models/User.cs (AppUser)             (Muhammed)
+      Models/Follow.cs                     (Muhammed)
+      Models/WatchList.cs                  (Muhammed)
+      Models/ShowLog.cs                    (Muhammed)
+      Models/Review.cs                     (Muhammed)
+      Models/Rating.cs                     (Muhammed)
+      Models/CustomList.cs                 (Muhammed)
+      Models/CustomListItem.cs             (Muhammed)
+      Models/Repos/ShowRepository.cs       (Sebastion)
+      Models/Repos/UserRepository.cs       (Sebastion)
+      Models/Repos/ListRepository.cs       (Sebastion)
+      Models/Repos/ReviewRepository.cs     (Sebastion)
+      Data/AppDbContext.cs
+
+  Notes on architecture divergence:
+    - The original proposal had a separate "Business Layer" with business rule
+      classes. In practice, business logic is handled inside the repositories
+      and controllers rather than dedicated business layer classes. This is a
+      simplification from the original design.
+    - The Repository pattern was adopted (ShowRepository, UserRepository, etc.)
+      which was hinted at in the original Data Layer class diagram but not
+      explicitly called out in the proposal narrative.
+    - ASP.NET Core Identity was integrated (IdentityDbContext<AppUser>), which
+      was not mentioned in the original proposal but handles authentication,
+      registration, login, and password management.
+
+--- DATABASE: Proposed vs Actual ---
+
+  Proposed tables (from class diagram):
+    User, TVShow, Review, Rating, WatchList, CustomList (with ShareToken),
+    Follow
+
+  Actual tables in DB (from AppDbContext + Migrations):
+    AspNetUsers (AppUser via Identity - extends IdentityUser with Bio,
+                 ProfilePictureUrl)
+    Shows (TVShow - TmdbId, Title, Overview, PosterPath, FirstAirDate,
+           NumberOfSeasons)
+    ShowLogs (NEW - replaces separate Rating+Review into one log entry with
+              LogType: Series/Season/Episode, optional Rating, optional Review,
+              SeasonNumber, EpisodeNumber, EpisodeTitle, WatchedOn)
+    Follows (FollowerId, FollowedId, FollowedAt)
+    WatchList (UserId, ShowId, AddedAt)
+    CustomLists (OwnerId, Name, Description, CreatedAt, ShareToken)
+    CustomListItems (junction table - ListId, ShowId)
+    Reviews (exists as model/table but largely replaced by ShowLog)
+    Ratings (exists as model/table but largely replaced by ShowLog)
+    + All standard ASP.NET Identity tables
+
+  Key change from proposal:
+    The most notable design change is the introduction of the ShowLog model.
+    Rather than having separate Rating and Review flows, a ShowLog entry
+    captures: what type of viewing (series, season, or episode), an optional
+    star rating (1-5), and optional review text all in one action. This is
+    more aligned with how Letterboxd actually works and simplifies the UX.
+
+
+================================================================================
+4. WORK ASSIGNMENTS
+--------------------------------------------------------------------------------
+
+4a. USE-CASE RESPONSIBILITY (unchanged from proposal)
+
+  Search                  ::: Muhammed Cengiz
+  Add Show to Account     ::: Jeffrey Pollock
+  Lists                   ::: Sebastion Da Silva
+  Social Interaction      ::: Austin Nicholson
+
+4b. CLASS RESPONSIBILITY (actual, updated from proposal)
+
+  Jeffrey Pollock - Controllers
+    Controllers/AccountController.cs
+    Controllers/ShowController.cs
+    Controllers/ShowApiController.cs
+    Controllers/ListController.cs
+    Controllers/HomeController.cs
+
+  Austin Nicholson - Views
+    Views/Account/Login.cshtml
+    Views/Account/Register.cshtml
+    Views/Account/Profile.cshtml
+    Views/Account/EditProfile.cshtml
+    Views/Account/FollowList.cshtml
+    Views/Account/Search.cshtml
+    Views/Show/Search.cshtml
+    Views/Show/Details.cshtml
+    Views/List/Details.cshtml
+    Views/Home/Index.cshtml
+    Views/Shared/_Layout.cshtml
+
+  Muhammed Cengiz - Models / Domain
+    Models/TVShow.cs
+    Models/User.cs (AppUser)
+    Models/Follow.cs
+    Models/WatchList.cs
+    Models/ShowLog.cs
+    Models/Review.cs
+    Models/Rating.cs
+    Models/CustomList.cs
+    Models/CustomListItem.cs
+    Data/AppDbContext.cs
+    Migrations/
+    TVTrack.Tests/UnitTest1.cs (NUnit tests)
+
+  Sebastion Da Silva - Services + Repositories
+    Services/ITmdbService.cs
+    Services/TmdbService.cs
+    Models/Repos/ShowRepository.cs
+    Models/Repos/UserRepository.cs
+    Models/Repos/ListRepository.cs
+    Models/Repos/ReviewRepository.cs
+
+
+================================================================================
+5. TECHNOLOGY REQUIREMENTS CHECKLIST
+--------------------------------------------------------------------------------
+
+  [x] Code developed using Visual Studio 2022
+  [x] ASP.NET Core with Bootstrap / jQuery (client-side)
+  [x] Web API for web services (ShowApiController - JSON endpoints)
+  [x] Entity Framework Core for model persistence
+  [x] NUnit testing framework (TVTrack.Tests project with 4 tests)
+  [x] SQL Server (LocalDB) for relational database
+  [x] JSON for data delivered through Web API
+
+  OO Design principles demonstrated:
+  [x] Encapsulation - private fields with _ prefix, public properties
+  [x] Interfaces - ITmdbService used for DI / testability
+  [x] Separation of concerns - Controllers vs Repositories vs Services vs Models
+  [x] Loose coupling - DI throughout (ITmdbService, ShowRepository, UserManager)
+  [x] Inheritance - AppUser extends IdentityUser; AppDbContext extends
+      IdentityDbContext<AppUser>
+
+  Coding conventions:
+  [x] _ prefix for private fields
+  [x] PascalCase for classes, methods, properties
+  [x] Descriptive names throughout
+  [x] XML-style comments on methods (partial - ShowApiController fully commented,
+      others have inline comments)
+  [x] Class headers with author and description (ShowApiController, UnitTest1)
+
+
+================================================================================
+6. SUMMARY OF DIFFERENCES FROM ORIGINAL PROPOSAL
+================================================================================
+
+  ADDITIONS (not in original proposal):
+  - ASP.NET Core Identity for authentication/authorization
+  - ShowLog model replacing separate Rate + Review flows into one combined log
+  - LogType enum (Series / Season / Episode) for granular watch tracking
+  - Season/episode TMDB API calls (GetSeasonAsync) with dynamic episode dropdown
+  - Web API controller (ShowApiController) with JSON endpoints
+  - User profile picture upload (file storage to wwwroot/uploads/avatars)
+  - User search feature (/Account/Search)
+  - NUnit test project (TVTrack.Tests) with 4 tests covering TMDB service mapping
+    and API controller edge cases
+
+  CHANGES FROM PROPOSAL:
+  - .NET 8 -> .NET 10 (upgraded)
+  - Add Show popup flow -> inline actions on Show Details page
+  - Separate Rate/Review flows -> single unified ShowLog entry
+  - Dedicated Business Layer classes -> business logic in repositories/controllers
+  - CustomListShow -> CustomListItem (renamed junction table with own Id)
+
+  NOT YET IMPLEMENTED (from proposal):
+  - Delete custom list
+  - Remove show from custom list
+  - Dedicated list search page
+  - Share list link (model field exists, controller/view not wired up)
+  - Sequence/activity diagrams (were mentioned in project requirements)
+  - Some classes still have limited XML commenting compared to requirements
+
+================================================================================
+END OF DOCUMENT
+================================================================================

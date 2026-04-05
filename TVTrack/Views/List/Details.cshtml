@@ -17,6 +17,27 @@
                 <p class="overview-text mt-2 mb-0">@Model.Description</p>
             }
         </div>
+
+        @if (Model.IsOwner)
+        {
+            <div class="d-flex gap-2 flex-wrap align-items-center">
+                @if (!string.IsNullOrEmpty(Model.ShareToken))
+                {
+                    var shareUrl = $"{Context.Request.Scheme}://{Context.Request.Host}/List/Share/{Model.ShareToken}";
+                    <button type="button" class="btn-list-add"
+                            onclick="navigator.clipboard.writeText('@shareUrl').then(() => this.textContent = 'Copied!').catch(() => this.textContent = 'Copy failed')">
+                        &#128279; Copy Share Link
+                    </button>
+                }
+
+                <form asp-controller="List" asp-action="Delete" method="post"
+                      onsubmit="return confirm('Delete this list? This cannot be undone.')">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="listId" value="@Model.ListId" />
+                    <button type="submit" class="btn-watchlist-remove">&#128465; Delete List</button>
+                </form>
+            </div>
+        }
     </div>
 </div>
 
@@ -40,6 +61,15 @@
                             <div class="show-card-title">@show.Title</div>
                             <a asp-controller="Show" asp-action="Details" asp-route-id="@show.TmdbId"
                                class="show-card-link mt-2">View</a>
+                            @if (Model.IsOwner)
+                            {
+                                <form asp-controller="List" asp-action="RemoveShow" method="post" class="mt-1">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="listId" value="@Model.ListId" />
+                                    <input type="hidden" name="tmdbId" value="@show.TmdbId" />
+                                    <button type="submit" class="btn-watchlist-remove w-100">Remove</button>
+                                </form>
+                            }
                         </div>
                     </div>
                 </div>

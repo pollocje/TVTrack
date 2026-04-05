@@ -9,6 +9,7 @@ namespace TVTrack.Models.ViewModels
         public string? Description { get; set; }
         public string OwnerUsername { get; set; } = string.Empty;
         public bool IsOwner { get; set; }
+        public string? ShareToken { get; set; }
         public List<ShowCardViewModel> Shows { get; set; } = new();
     }
 }
